@@ -41,8 +41,8 @@
     <!-- Sidebar -->
     <aside class="dashboard-sidebar d-none d-lg-block">
         <div class="px-4 mb-5">
-            <a href="index.html" class="navbar-brand text-white">
-                <i class="bi bi-diagram-3-fill me-2"></i>
+            <a href="index.html" class="navbar-brand">
+                <i class="bi bi-diagram-3-fill"></i>
                 <span>ES Tuner</span>
             </a>
         </div>
@@ -59,7 +59,10 @@
 
     <!-- Mobile Header for Dashboard -->
     <header class="d-lg-none bg-primary text-white p-3 d-flex justify-content-between align-items-center">
-        <a href="index.html" class="text-white text-decoration-none fw-bold"><i class="bi bi-diagram-3-fill me-2"></i>ES Tuner</a>
+        <a href="index.html" class="navbar-brand">
+            <i class="bi bi-diagram-3-fill"></i>
+            <span>ES Tuner</span>
+        </a>
         <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardMobileMenu">
             <i class="bi bi-list fs-2"></i>
         </button>
@@ -86,10 +89,10 @@
         <div class="d-flex justify-content-between align-items-center mb-5">
             <h2 class="fw-bold mb-0">Dashboard Overview</h2>
             <div class="d-flex align-items-center gap-3">
-                <button id="rtlToggle" class="btn btn-outline-primary border-0 rounded-circle">
+                <button class="btn btn-outline-primary border-0 rounded-circle rtl-toggle-btn">
                     <span class="small fw-bold">RTL</span>
                 </button>
-                <button id="themeToggle" class="btn btn-outline-primary border-0 rounded-circle">
+                <button class="btn btn-outline-primary border-0 rounded-circle theme-toggle-btn">
                     <i class="bi bi-moon-fill fs-5"></i>
                 </button>
                 <div class="dropdown">

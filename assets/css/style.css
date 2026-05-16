@@ -40,10 +40,15 @@ body {
 
 .navbar-brand {
     font-weight: 800;
-    color: var(--primary-color) !important;
+    font-size: 1.5rem !important;
+    color: var(--secondary-color) !important;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.navbar-brand i {
+    font-size: 1.8rem !important;
 }
 
 .nav-link {
@@ -70,9 +75,19 @@ body {
 }
 
 [data-bs-theme="dark"] .nav-link.active {
-    background-color: var(--secondary-color) !important;
-    color: #1e293b !important;
-    box-shadow: 0 4px 10px rgba(0, 191, 179, 0.2);
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 85, 113, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+[data-bs-theme="dark"] .nav-link {
+    color: var(--dark-color) !important;
+}
+
+[data-bs-theme="dark"] .offcanvas {
+    background-color: var(--light-color) !important;
+    color: var(--dark-color) !important;
 }
 
 [data-bs-theme="dark"] .nav-link:hover {
@@ -221,8 +236,15 @@ footer {
 
 footer .logo-text {
     font-weight: 800;
-    font-size: 1.5rem;
-    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    color: var(--secondary-color) !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .logo-text i {
+    font-size: 1.8rem !important;
 }
 
 footer h5 {

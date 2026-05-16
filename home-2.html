@@ -40,15 +40,17 @@
                 </a>
                 
                 <div class="d-flex align-items-center order-lg-last ms-2">
-                    <button id="rtlToggle" class="btn btn-link p-0 me-2" title="Toggle RTL/LTR">
-                        <span>RTL</span>
-                    </button>
-                    <button id="themeToggle" class="btn btn-link p-0 me-3" title="Toggle Theme">
-                        <i class="bi bi-moon-fill fs-4"></i>
-                    </button>
-                    <button class="btn btn-primary d-none d-sm-inline-block me-2" onclick="location.href='login.html'">Login</button>
-                    <button class="btn btn-outline-primary d-none d-sm-inline-block me-2" onclick="location.href='register.html'">Signup</button>
-                    <button class="navbar-toggler ms-2 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <div class="d-none d-lg-flex align-items-center">
+                        <button class="btn btn-link p-0 me-2 rtl-toggle-btn" title="Toggle RTL/LTR">
+                            <span>RTL</span>
+                        </button>
+                        <button class="btn btn-link p-0 me-3 theme-toggle-btn" title="Toggle Theme">
+                            <i class="bi bi-moon-fill fs-4"></i>
+                        </button>
+                        <a href="login.html" class="btn btn-primary me-2">Login</a>
+                        <a href="register.html" class="btn btn-outline-primary">Signup</a>
+                    </div>
+                    <button class="navbar-toggler border-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
@@ -83,9 +85,31 @@
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <hr>
-                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="register.html">Signup</a></li>
+                
+                <li class="nav-item d-lg-none mt-4">
+                    <div class="d-flex flex-column gap-3 px-2">
+                        <div class="d-flex align-items-center justify-content-between py-2 border-top">
+                            <span class="fw-600">Language Control</span>
+                            <button class="btn btn-link p-0 text-decoration-none rtl-toggle-btn" title="Toggle RTL/LTR">
+                                <span class="fw-bold">RTL</span>
+                            </button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between py-2 border-top">
+                            <span class="fw-600">Appearance</span>
+                            <button class="btn btn-link p-0 text-decoration-none theme-toggle-btn" title="Toggle Theme">
+                                <i class="bi bi-moon-fill fs-4"></i>
+                            </button>
+                        </div>
+                        <div class="row g-2 mt-2">
+                            <div class="col-6">
+                                <a href="login.html" class="btn btn-primary w-100">Login</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="register.html" class="btn btn-outline-primary w-100">Signup</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -280,7 +304,7 @@
         <div class="container">
             <div class="row g-4 mb-5">
                 <div class="col-lg-4 col-md-6">
-                    <div class="logo-text mb-3"><i class="bi bi-diagram-3-fill me-2"></i>ES Tuner</div>
+                    <div class="logo-text mb-3"><i class="bi bi-diagram-3-fill"></i>ES Tuner</div>
                     <p>The leading freelance platform for Elasticsearch cluster health and performance optimization.</p>
                     <div class="d-flex gap-3 fs-4 mt-3">
                         <a href="#"><i class="bi bi-facebook"></i></a>
