@@ -22,13 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateThemeIcons(theme) {
         themeToggles.forEach(btn => {
             const icon = btn.querySelector('i');
+            const span = btn.querySelector('span');
             if (icon) {
                 if (theme === 'dark') {
-                    icon.classList.remove('bi-moon-fill');
-                    icon.classList.add('bi-sun-fill');
+                    icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+                    if (span) span.textContent = 'Light Mode';
                 } else {
-                    icon.classList.remove('bi-sun-fill');
-                    icon.classList.add('bi-moon-fill');
+                    icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+                    if (span) span.textContent = 'Dark Mode';
                 }
             }
         });

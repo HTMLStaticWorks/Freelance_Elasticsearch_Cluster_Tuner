@@ -41,7 +41,7 @@ body {
 .navbar-brand {
     font-weight: 800;
     font-size: 1.5rem !important;
-    color: var(--secondary-color) !important;
+    color: #00bfb3 !important;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -49,6 +49,7 @@ body {
 
 .navbar-brand i {
     font-size: 1.8rem !important;
+    color: #00bfb3 !important;
 }
 
 .nav-link {
@@ -237,7 +238,7 @@ footer {
 footer .logo-text {
     font-weight: 800;
     font-size: 1.5rem !important;
-    color: var(--secondary-color) !important;
+    color: #00bfb3 !important;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -245,6 +246,7 @@ footer .logo-text {
 
 footer .logo-text i {
     font-size: 1.8rem !important;
+    color: #00bfb3 !important;
 }
 
 footer h5 {
