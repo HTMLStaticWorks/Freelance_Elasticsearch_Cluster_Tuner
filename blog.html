@@ -15,6 +15,19 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        .blog-card-img {
+            height: 240px;
+            object-fit: cover;
+        }
+        .blog-hero {
+            background: linear-gradient(rgba(0, 85, 113, 0.85), rgba(0, 85, 113, 0.85)), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -26,15 +39,21 @@
                     <i class="bi bi-diagram-3-fill"></i>
                     <span>ES Tuner</span>
                 </a>
+                
                 <div class="d-flex align-items-center order-lg-last ms-2">
-                    <button class="btn btn-primary d-none d-sm-inline-block me-2" onclick="location.href='login.html'">Login</button>
-                    <button id="themeToggle" class="btn btn-link text-dark p-0" title="Toggle Theme">
+                    <button id="rtlToggle" class="btn btn-link p-0 me-2" title="Toggle RTL/LTR">
+                        <span>RTL</span>
+                    </button>
+                    <button id="themeToggle" class="btn btn-link p-0 me-3" title="Toggle Theme">
                         <i class="bi bi-moon-fill fs-4"></i>
                     </button>
-                    <button class="navbar-toggler ms-3 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <button class="btn btn-primary d-none d-sm-inline-block me-2" onclick="location.href='login.html'">Login</button>
+                    <button class="btn btn-outline-primary d-none d-sm-inline-block me-2" onclick="location.href='register.html'">Signup</button>
+                    <button class="navbar-toggler ms-2 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
@@ -50,12 +69,38 @@
         </nav>
     </header>
 
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold"><i class="bi bi-diagram-3-fill me-2"></i>ES Tuner</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <hr>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="register.html">Signup</a></li>
+            </ul>
+        </div>
+    </div>
+
     <main>
         <!-- Blog Header -->
-        <section class="py-5 bg-primary text-white">
-            <div class="container text-center">
-                <h1 class="fw-bold">Cluster Insights Blog</h1>
-                <p>Expert tips on Elasticsearch tuning and search optimization.</p>
+        <section class="blog-hero text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-3">Cluster Insights Blog</h1>
+                        <p class="lead mb-0">Expert insights, optimization guides, and the latest trends in the Elasticsearch ecosystem. Curated by top performance engineers.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -89,15 +134,17 @@
                     <!-- Blog 1 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Blog">
-                            <div class="card-body">
-                                <span class="badge bg-light text-primary mb-2">Performance</span>
-                                <h5 class="fw-bold"><a href="blog-details.html" class="text-decoration-none text-dark">5 Shard Allocation Tips You Need</a></h5>
-                                <p class="text-muted small">Learn how to properly distribute shards across your data nodes...</p>
-                                <hr>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="small text-muted"><i class="bi bi-calendar3 me-1"></i> May 10, 2026</div>
-                                    <a href="blog-details.html" class="btn btn-link btn-sm p-0 text-primary">Read More</a>
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" class="card-img-top blog-card-img" alt="Blog">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge bg-primary-subtle text-primary mb-2 align-self-start">Performance</span>
+                                <h5 class="fw-bold"><a href="blog-details.html" class="text-decoration-none text-reset">5 Shard Allocation Tips You Need</a></h5>
+                                <p class="text-muted small">Learn how to properly distribute shards across your data nodes and optimize storage.</p>
+                                <div class="mt-auto pt-3">
+                                    <hr class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="small text-muted"><i class="bi bi-calendar3 me-1"></i> May 10, 2026</div>
+                                        <a href="blog-details.html" class="btn btn-link btn-sm p-0 text-primary text-decoration-none fw-bold">Read More</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -105,15 +152,17 @@
                     <!-- Blog 2 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Blog">
-                            <div class="card-body">
-                                <span class="badge bg-light text-primary mb-2">Scaling</span>
-                                <h5 class="fw-bold"><a href="blog-details.html" class="text-decoration-none text-dark">Zero-Downtime Upgrades Guide</a></h5>
-                                <p class="text-muted small">A step-by-step walkthrough for upgrading your cluster without loss...</p>
-                                <hr>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="small text-muted"><i class="bi bi-calendar3 me-1"></i> May 08, 2026</div>
-                                    <a href="blog-details.html" class="btn btn-link btn-sm p-0 text-primary">Read More</a>
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" class="card-img-top blog-card-img" alt="Blog">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge bg-primary-subtle text-primary mb-2 align-self-start">Scaling</span>
+                                <h5 class="fw-bold"><a href="blog-details.html" class="text-decoration-none text-reset">Zero-Downtime Upgrades Guide</a></h5>
+                                <p class="text-muted small">A step-by-step walkthrough for upgrading your cluster without loss of availability.</p>
+                                <div class="mt-auto pt-3">
+                                    <hr class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="small text-muted"><i class="bi bi-calendar3 me-1"></i> May 08, 2026</div>
+                                        <a href="blog-details.html" class="btn btn-link btn-sm p-0 text-primary text-decoration-none fw-bold">Read More</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -121,15 +170,17 @@
                     <!-- Blog 3 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Blog">
-                            <div class="card-body">
-                                <span class="badge bg-light text-primary mb-2">Security</span>
-                                <h5 class="fw-bold"><a href="blog-details.html" class="text-decoration-none text-dark">Securing Your Kibana Instance</a></h5>
-                                <p class="text-muted small">Best practices for hardening your Kibana dashboard against attacks...</p>
-                                <hr>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="small text-muted"><i class="bi bi-calendar3 me-1"></i> May 05, 2026</div>
-                                    <a href="blog-details.html" class="btn btn-link btn-sm p-0 text-primary">Read More</a>
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" class="card-img-top blog-card-img" alt="Blog">
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge bg-primary-subtle text-primary mb-2 align-self-start">Security</span>
+                                <h5 class="fw-bold"><a href="blog-details.html" class="text-decoration-none text-reset">Securing Your Kibana Instance</a></h5>
+                                <p class="text-muted small">Best practices for hardening your Kibana dashboard against unauthorized access.</p>
+                                <div class="mt-auto pt-3">
+                                    <hr class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="small text-muted"><i class="bi bi-calendar3 me-1"></i> May 05, 2026</div>
+                                        <a href="blog-details.html" class="btn btn-link btn-sm p-0 text-primary text-decoration-none fw-bold">Read More</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -147,14 +198,126 @@
                 </nav>
             </div>
         </section>
+
+        <!-- Section: Popular Topics -->
+        <section class="bg-themed-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-white">Explore Popular Topics</h2>
+                    <p class="text-white opacity-75">Dive deep into specific areas of Elasticsearch optimization.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-6 col-lg-3">
+                        <a href="#" class="card bg-white bg-opacity-10 border-0 rounded-4 p-4 text-center text-decoration-none h-100 transition-up">
+                            <i class="bi bi-speedometer2 fs-1 text-secondary mb-3"></i>
+                            <h5 class="fw-bold text-white mb-0">Latency Tuning</h5>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#" class="card bg-white bg-opacity-10 border-0 rounded-4 p-4 text-center text-decoration-none h-100 transition-up">
+                            <i class="bi bi-shield-lock fs-1 text-secondary mb-3"></i>
+                            <h5 class="fw-bold text-white mb-0">Security Ops</h5>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#" class="card bg-white bg-opacity-10 border-0 rounded-4 p-4 text-center text-decoration-none h-100 transition-up">
+                            <i class="bi bi-cloud-arrow-up fs-1 text-secondary mb-3"></i>
+                            <h5 class="fw-bold text-white mb-0">Cloud Migration</h5>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="#" class="card bg-white bg-opacity-10 border-0 rounded-4 p-4 text-center text-decoration-none h-100 transition-up">
+                            <i class="bi bi-graph-up-arrow fs-1 text-secondary mb-3"></i>
+                            <h5 class="fw-bold text-white mb-0">Query Analytics</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contributor CTA -->
+        <section class="py-5">
+            <div class="container">
+                <div class="bg-primary rounded-4 p-5 text-center text-white shadow-lg overflow-hidden position-relative">
+                    <div class="position-relative z-1">
+                        <h2 class="fw-bold mb-3">Share Your Expertise</h2>
+                        <p class="lead mb-4 opacity-75">Are you an Elasticsearch expert? We're looking for contributors to share case studies and optimization tips.</p>
+                        <a href="contact.html" class="btn btn-light btn-lg px-5">Apply as Contributor</a>
+                    </div>
+                    <!-- Subtle background decoration -->
+                    <i class="bi bi-diagram-3-fill position-absolute end-0 bottom-0 opacity-10" style="font-size: 200px; transform: translate(30%, 30%);"></i>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container text-center py-4">
-            <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="logo-text mb-3"><i class="bi bi-diagram-3-fill me-2"></i>ES Tuner</div>
+                    <p>The leading freelance platform for Elasticsearch cluster health and performance optimization.</p>
+                    <div class="d-flex gap-3 fs-4 mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="contact.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html">Help Center</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+                        <li class="mb-2"><a href="coming-soon.html">Documentation</a></li>
+                        <li class="mb-2"><a href="404.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p>Subscribe to receive monthly cluster health reports and tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                            <button class="btn btn-primary" type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Language: English (RTL Support)
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Arabic (RTL)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>

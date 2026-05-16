@@ -38,6 +38,15 @@
 </head>
 <body class="bg-light">
 
+    <div class="position-fixed top-0 end-0 p-3 z-3 d-flex gap-2">
+        <button id="rtlToggle" class="btn btn-link p-0" title="Toggle RTL/LTR">
+            <span class="small fw-bold">RTL</span>
+        </button>
+        <button id="themeToggle" class="btn btn-link p-0" title="Toggle Theme">
+            <i class="bi bi-moon-fill fs-4"></i>
+        </button>
+    </div>
+
     <div class="container d-flex align-items-center justify-content-center min-vh-100 py-5">
         <div class="card auth-card p-4 p-md-5 border-0 shadow-lg rounded-4">
             <div class="text-center mb-4">
@@ -55,15 +64,18 @@
                     <input type="email" class="form-control py-3" placeholder="name@company.com" required>
                 </div>
                 <div class="mb-3">
-                    <div class="d-flex justify-content-between">
-                        <label class="form-label fw-600">Password</label>
-                        <a href="#" class="small text-primary">Forgot?</a>
+                    <label class="form-label fw-600">Password</label>
+                    <div class="position-relative">
+                        <input type="password" class="form-control py-3" id="password" placeholder="••••••••" required>
+                        <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" data-target="password"></i>
                     </div>
-                    <input type="password" class="form-control py-3" placeholder="••••••••" required>
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="remember">
-                    <label class="form-check-label small" for="remember">Remember me</label>
+                <div class="mb-3 d-flex justify-content-between align-items-center">
+                    <div class="form-check mb-0">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label small" for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="small text-primary text-decoration-none fw-bold">Forgot?</a>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 py-3 mb-4">Sign In</button>
             </form>
@@ -78,7 +90,7 @@
                     <a href="#" class="social-btn"><i class="bi bi-google me-2"></i>Google</a>
                 </div>
                 <div class="col-6">
-                    <a href="#" class="social-btn"><i class="bi bi-github me-2"></i>GitHub</a>
+                    <a href="#" class="social-btn"><i class="bi bi-apple me-2"></i>Apple</a>
                 </div>
             </div>
 

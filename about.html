@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0, 85, 113, 0.85), rgba(0, 85, 113, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -26,15 +35,21 @@
                     <i class="bi bi-diagram-3-fill"></i>
                     <span>ES Tuner</span>
                 </a>
+                
                 <div class="d-flex align-items-center order-lg-last ms-2">
-                    <button class="btn btn-primary d-none d-sm-inline-block me-2" onclick="location.href='login.html'">Login</button>
-                    <button id="themeToggle" class="btn btn-link text-dark p-0" title="Toggle Theme">
+                    <button id="rtlToggle" class="btn btn-link p-0 me-2" title="Toggle RTL/LTR">
+                        <span>RTL</span>
+                    </button>
+                    <button id="themeToggle" class="btn btn-link p-0 me-3" title="Toggle Theme">
                         <i class="bi bi-moon-fill fs-4"></i>
                     </button>
-                    <button class="navbar-toggler ms-3 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <button class="btn btn-primary d-none d-sm-inline-block me-2" onclick="location.href='login.html'">Login</button>
+                    <button class="btn btn-outline-primary d-none d-sm-inline-block me-2" onclick="location.href='register.html'">Signup</button>
+                    <button class="navbar-toggler ms-2 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
@@ -65,21 +80,23 @@
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <hr>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="register.html">Signup</a></li>
             </ul>
         </div>
     </div>
 
     <main>
         <!-- Page Header -->
-        <section class="py-5 bg-primary text-white text-center">
+        <section class="about-hero text-center">
             <div class="container">
-                <h1 class="display-4 fw-bold">About Us</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
-                        <li class="breadcrumb-item active text-white opacity-75" aria-current="page">About</li>
-                    </ol>
-                </nav>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-4">Our Story & Vision</h1>
+                        <p class="lead mb-0">We are a team of dedicated search engineers who believe that every byte of data tells a story. Our journey began in 2015 when we realized that many companies were struggling with the complexities of distributed search. Today, we help global enterprises scale their data infrastructure with precision and care.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -140,6 +157,66 @@
                 </div>
             </div>
         </section>
+
+        <!-- Our Core Values -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Our Core Values</h2>
+                    <p class="text-muted">The principles that guide every cluster we tune.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 text-center">
+                        <div class="card p-4 border-0 h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80" alt="Data Integrity" class="img-fluid rounded-4 mb-3 w-100" style="height: 180px; object-fit: cover;">
+                            <h5 class="fw-bold">Data Integrity</h5>
+                            <p class="small text-muted">We prioritize the safety of your data above all else, ensuring zero loss during migrations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card p-4 border-0 h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Maximum Uptime" class="img-fluid rounded-4 mb-3 w-100" style="height: 180px; object-fit: cover;">
+                            <h5 class="fw-bold">Maximum Uptime</h5>
+                            <p class="small text-muted">Our strategies are designed for zero-downtime performance, keeping your business running 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="card p-4 border-0 h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80" alt="Scalable Design" class="img-fluid rounded-4 mb-3 w-100" style="height: 180px; object-fit: cover;">
+                            <h5 class="fw-bold">Scalable Design</h5>
+                            <p class="small text-muted">We build search architectures that grow with your data, from gigabytes to petabytes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Presence -->
+        <section class="bg-themed-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="fw-bold mb-4">A Global Perspective on Search</h2>
+                        <p class="lead mb-4">Our engineers support clusters across 6 continents, providing around-the-clock expertise to global enterprises.</p>
+                        <p class="opacity-75">Whether you're a startup in Berlin or a retail giant in Tokyo, our remote-first architecture allows us to dive into your cluster and resolve issues in real-time, no matter the time zone.</p>
+                        <div class="mt-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-globe2 me-2"></i> <span>20+ Countries Served</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-shield-check me-2"></i> <span>Enterprise-Grade Security</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-headset me-2"></i> <span>24/7 Global Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80" alt="Global Support" class="img-fluid rounded-4 shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -148,21 +225,67 @@
             <div class="row g-4 mb-5">
                 <div class="col-lg-4 col-md-6">
                     <div class="logo-text mb-3"><i class="bi bi-diagram-3-fill me-2"></i>ES Tuner</div>
-                    <p class="text-muted">The leading freelance platform for Elasticsearch cluster health and performance optimization.</p>
+                    <p>The leading freelance platform for Elasticsearch cluster health and performance optimization.</p>
+                    <div class="d-flex gap-3 fs-4 mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                    </div>
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <h5 class="fw-bold mb-4 text-white">Links</h5>
+                    <h5 class="fw-bold mb-4">Company</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="contact.html">Careers</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-6 col-md-12 text-md-end">
-                    <p class="text-muted mb-0">© 2026 ES Tuner. All rights reserved.</p>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html">Help Center</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+                        <li class="mb-2"><a href="coming-soon.html">Documentation</a></li>
+                        <li class="mb-2"><a href="404.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p>Subscribe to receive monthly cluster health reports and tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                            <button class="btn btn-primary" type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Language: English (RTL Support)
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Arabic (RTL)</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
     <!-- Back to Top -->
     <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow">

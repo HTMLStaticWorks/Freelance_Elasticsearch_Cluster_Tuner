@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        .pricing-hero {
+            background: linear-gradient(rgba(0, 85, 113, 0.85), rgba(0, 85, 113, 0.85)), url('https://images.unsplash.com/photo-1554224155-169746997530?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -26,31 +35,74 @@
                     <i class="bi bi-diagram-3-fill"></i>
                     <span>ES Tuner</span>
                 </a>
+                
                 <div class="d-flex align-items-center order-lg-last ms-2">
-                    <button id="themeToggle" class="btn btn-link text-dark p-0" title="Toggle Theme">
+                    <button id="rtlToggle" class="btn btn-link p-0 me-2" title="Toggle RTL/LTR">
+                        <span>RTL</span>
+                    </button>
+                    <button id="themeToggle" class="btn btn-link p-0 me-3" title="Toggle Theme">
                         <i class="bi bi-moon-fill fs-4"></i>
                     </button>
-                    <button class="navbar-toggler ms-3 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <button class="btn btn-primary d-none d-sm-inline-block me-2" onclick="location.href='login.html'">Login</button>
+                    <button class="btn btn-outline-primary d-none d-sm-inline-block me-2" onclick="location.href='register.html'">Signup</button>
+                    <button class="navbar-toggler ms-2 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h1 class="display-4 fw-bold">Simple, Transparent Pricing</h1>
-                <p class="text-muted">Choose the plan that fits your cluster size and needs.</p>
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold"><i class="bi bi-diagram-3-fill me-2"></i>ES Tuner</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <hr>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="register.html">Signup</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <!-- Pricing Hero -->
+        <section class="pricing-hero text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold mb-3">Simple, Transparent Pricing</h1>
+                        <p class="lead mb-0">Choose the plan that fits your cluster size and optimization needs. No hidden fees, just pure performance.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Pricing Plans -->
+        <section class="py-5">
+            <div class="container">
 
             <div class="row g-4 justify-content-center">
                 <!-- Basic -->
@@ -103,15 +155,139 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Section: FAQ -->
+        <section class="bg-themed-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Pricing FAQ</h2>
+                    <p class="opacity-75">Common questions about our plans and billing.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion accordion-flush" id="faqAccordion">
+                            <div class="accordion-item bg-transparent border-light border-opacity-10">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-transparent text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        Can I upgrade my plan later?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-white opacity-75">
+                                        Yes! You can upgrade your plan at any time as your cluster grows. Our team will handle the transition seamlessly.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-light border-opacity-10">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-transparent text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        Is there a setup fee?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-white opacity-75">
+                                        No, there are no hidden setup fees. The monthly price covers the full audit and ongoing tuning support.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-light border-opacity-10">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-transparent text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        What happens if I'm not satisfied?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body text-white opacity-75">
+                                        We offer a 30-day performance guarantee. If you don't see a measurable improvement in cluster health, we'll provide a full refund.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Custom Quote -->
+        <section class="py-5">
+            <div class="container text-center">
+                <div class="p-5 rounded-4 bg-light shadow-sm">
+                    <h2 class="fw-bold mb-3">Need a Custom Enterprise Solution?</h2>
+                    <p class="text-muted mb-4">For clusters larger than 100 nodes or specialized compliance requirements.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg px-5">Request a Quote</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container text-center py-4">
-            <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="logo-text mb-3"><i class="bi bi-diagram-3-fill me-2"></i>ES Tuner</div>
+                    <p>The leading freelance platform for Elasticsearch cluster health and performance optimization.</p>
+                    <div class="d-flex gap-3 fs-4 mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="contact.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html">Help Center</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+                        <li class="mb-2"><a href="coming-soon.html">Documentation</a></li>
+                        <li class="mb-2"><a href="404.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p>Subscribe to receive monthly cluster health reports and tips.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                            <button class="btn btn-primary" type="submit">Join</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="row mt-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Language: English (RTL Support)
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Arabic (RTL)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
