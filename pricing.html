@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
@@ -38,11 +38,11 @@
                 
                 <div class="d-flex align-items-center order-lg-last ms-2">
                     <div class="d-none d-lg-flex align-items-center">
-                        <button class="btn btn-link p-0 me-2 rtl-toggle-btn" title="Toggle RTL/LTR">
-                            <span>RTL</span>
+                        <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                            <i class="bi bi-translate"></i>
                         </button>
-                        <button class="btn btn-link p-0 me-3 theme-toggle-btn" title="Toggle Theme">
-                            <i class="bi bi-moon-fill fs-4"></i>
+                        <button class="btn btn-outline-primary rounded-circle theme-toggle-btn d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;" title="Toggle Theme">
+                            <i class="bi bi-moon-fill"></i>
                         </button>
                         <a href="login.html" class="btn btn-primary me-2">Login</a>
                         <a href="register.html" class="btn btn-outline-primary">Signup</a>
@@ -58,6 +58,7 @@
                         <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -79,13 +80,14 @@
                 <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                
+                <!-- Auth & Toggles (Mobile Only) -->
                 <li class="nav-item d-lg-none mt-4">
                     <div class="d-flex flex-column gap-2 px-2 pt-4 border-top">
-                        <div class="row g-2 mb-2">
+                        <div class="row g-2 mb-3">
                             <div class="col-6">
                                 <a href="login.html" class="btn btn-primary w-100">Login</a>
                             </div>
@@ -93,14 +95,14 @@
                                 <a href="register.html" class="btn btn-outline-primary w-100">Signup</a>
                             </div>
                         </div>
-                        <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 rtl-toggle-btn">
-                            <i class="bi bi-translate"></i>
-                            <span>RTL</span>
-                        </button>
-                        <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 theme-toggle-btn">
-                            <i class="bi bi-moon-fill"></i>
-                            <span>Dark Mode</span>
-                        </button>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle theme-toggle-btn" style="width: 40px; height: 40px;" title="Toggle Theme">
+                                <i class="bi bi-moon-fill"></i>
+                            </button>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -127,7 +129,7 @@
             <div class="row g-4 justify-content-center">
                 <!-- Basic -->
                 <div class="col-lg-4">
-                    <div class="card h-100 p-4 border-0 shadow-sm text-center">
+                    <div class="card h-100 p-4 border-0 shadow-sm text-center d-flex flex-column">
                         <div class="mb-3"><i class="bi bi-rocket text-primary fs-1"></i></div>
                         <h4 class="fw-bold">Startup</h4>
                         <p class="text-muted">For single nodes or dev clusters.</p>
@@ -138,12 +140,12 @@
                             <li class="mb-2"><i class="bi bi-x text-danger me-2"></i> Priority Support</li>
                             <li class="mb-2"><i class="bi bi-x text-danger me-2"></i> 24/7 Monitoring</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-outline-primary w-100 py-3">Get Started</a>
+                        <a href="contact.html" class="btn btn-outline-primary w-100 py-3 mt-auto">Get Started</a>
                     </div>
                 </div>
                 <!-- Professional -->
                 <div class="col-lg-4">
-                    <div class="card h-100 p-4 border-primary shadow text-center position-relative">
+                    <div class="card h-100 p-4 border-primary shadow text-center position-relative d-flex flex-column">
                         <span class="badge bg-primary position-absolute top-0 start-50 translate-middle">MOST POPULAR</span>
                         <div class="mb-3"><i class="bi bi-building text-primary fs-1"></i></div>
                         <h4 class="fw-bold">Enterprise</h4>
@@ -155,12 +157,12 @@
                             <li class="mb-2"><i class="bi bi-check text-primary me-2"></i> Priority Email Support</li>
                             <li class="mb-2"><i class="bi bi-check text-primary me-2"></i> Security Hardening</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary w-100 py-3">Choose Enterprise</a>
+                        <a href="contact.html" class="btn btn-primary w-100 py-3 mt-auto">Choose Enterprise</a>
                     </div>
                 </div>
                 <!-- Custom -->
                 <div class="col-lg-4">
-                    <div class="card h-100 p-4 border-0 shadow-sm text-center">
+                    <div class="card h-100 p-4 border-0 shadow-sm text-center d-flex flex-column">
                         <div class="mb-3"><i class="bi bi-globe text-primary fs-1"></i></div>
                         <h4 class="fw-bold">Global</h4>
                         <p class="text-muted">For massive geo-distributed clusters.</p>
@@ -171,7 +173,7 @@
                             <li class="mb-2"><i class="bi bi-check text-primary me-2"></i> 24/7 Phone Support</li>
                             <li class="mb-2"><i class="bi bi-check text-primary me-2"></i> Custom Dashboards</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-outline-primary w-100 py-3">Contact Sales</a>
+                        <a href="contact.html" class="btn btn-outline-primary w-100 py-3 mt-auto">Contact Sales</a>
                     </div>
                 </div>
             </div>
@@ -189,36 +191,36 @@
                         <div class="accordion accordion-flush" id="faqAccordion">
                             <div class="accordion-item bg-transparent border-light border-opacity-10">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-transparent text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                                         Can I upgrade my plan later?
                                     </button>
                                 </h2>
                                 <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body text-white opacity-75">
+                                    <div class="accordion-body opacity-75">
                                         Yes! You can upgrade your plan at any time as your cluster grows. Our team will handle the transition seamlessly.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item bg-transparent border-light border-opacity-10">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-transparent text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
                                         Is there a setup fee?
                                     </button>
                                 </h2>
                                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body text-white opacity-75">
+                                    <div class="accordion-body opacity-75">
                                         No, there are no hidden setup fees. The monthly price covers the full audit and ongoing tuning support.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item bg-transparent border-light border-opacity-10">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed bg-transparent text-white fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
                                         What happens if I'm not satisfied?
                                     </button>
                                 </h2>
                                 <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body text-white opacity-75">
+                                    <div class="accordion-body opacity-75">
                                         We offer a 30-day performance guarantee. If you don't see a measurable improvement in cluster health, we'll provide a full refund.
                                     </div>
                                 </div>
@@ -287,7 +289,7 @@
             <hr>
             <div class="row mt-4 align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+                    <p class="mb-0">Â© 2026 ES Tuner. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="dropdown">
@@ -313,3 +315,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

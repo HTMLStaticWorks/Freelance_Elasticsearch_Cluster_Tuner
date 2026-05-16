@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
@@ -42,11 +42,11 @@
                 
                 <div class="d-flex align-items-center order-lg-last ms-2">
                     <div class="d-none d-lg-flex align-items-center">
-                        <button class="btn btn-link p-0 me-2 rtl-toggle-btn" title="Toggle RTL/LTR">
-                            <span>RTL</span>
+                        <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                            <i class="bi bi-translate"></i>
                         </button>
-                        <button class="btn btn-link p-0 me-3 theme-toggle-btn" title="Toggle Theme">
-                            <i class="bi bi-moon-fill fs-4"></i>
+                        <button class="btn btn-outline-primary rounded-circle theme-toggle-btn d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;" title="Toggle Theme">
+                            <i class="bi bi-moon-fill"></i>
                         </button>
                         <a href="login.html" class="btn btn-primary me-2">Login</a>
                         <a href="register.html" class="btn btn-outline-primary">Signup</a>
@@ -62,6 +62,7 @@
                         <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -83,13 +84,14 @@
                 <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 
                 <li class="nav-item d-lg-none mt-4">
                     <div class="d-flex flex-column gap-2 px-2 pt-4 border-top">
-                        <div class="row g-2 mb-2">
+                        <div class="row g-2 mb-3">
                             <div class="col-6">
                                 <a href="login.html" class="btn btn-primary w-100">Login</a>
                             </div>
@@ -97,14 +99,14 @@
                                 <a href="register.html" class="btn btn-outline-primary w-100">Signup</a>
                             </div>
                         </div>
-                        <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 rtl-toggle-btn">
-                            <i class="bi bi-translate"></i>
-                            <span>RTL</span>
-                        </button>
-                        <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 theme-toggle-btn">
-                            <i class="bi bi-moon-fill"></i>
-                            <span>Dark Mode</span>
-                        </button>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle theme-toggle-btn" style="width: 40px; height: 40px;" title="Toggle Theme">
+                                <i class="bi bi-moon-fill"></i>
+                            </button>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -135,12 +137,12 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="d-flex gap-2 overflow-auto pb-2">
-                            <button class="btn btn-white border btn-sm active">All</button>
-                            <button class="btn btn-white border btn-sm">Performance</button>
-                            <button class="btn btn-white border btn-sm">Security</button>
-                            <button class="btn btn-white border btn-sm">Scaling</button>
-                            <button class="btn btn-white border btn-sm">Case Studies</button>
+                        <div class="d-flex flex-wrap flex-md-nowrap gap-2 overflow-auto pb-2 custom-scrollbar">
+                            <button class="btn btn-white border btn-sm active shadow-sm">All</button>
+                            <button class="btn btn-white border btn-sm shadow-sm">Performance</button>
+                            <button class="btn btn-white border btn-sm shadow-sm">Security</button>
+                            <button class="btn btn-white border btn-sm shadow-sm">Scaling</button>
+                            <button class="btn btn-white border btn-sm shadow-sm text-nowrap">Case Studies</button>
                         </div>
                     </div>
                 </div>
@@ -269,6 +271,57 @@
                 </div>
             </div>
         </section>
+        <!-- Q&A Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Common Questions & Answers</h2>
+                    <p class="text-muted">Quick insights into cluster management and optimization.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion accordion-flush" id="blogFAQ">
+                            <div class="accordion-item border rounded-3 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-600 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        How often should I perform a cluster health check?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#blogFAQ">
+                                    <div class="accordion-body text-muted">
+                                        We recommend a deep audit at least once a quarter, or whenever you experience a significant increase in data volume or query complexity.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border rounded-3 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-600 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        What is the ideal shard size for optimal performance?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#blogFAQ">
+                                    <div class="accordion-body text-muted">
+                                        Generally, keeping shard sizes between 10GB and 50GB is recommended for most use cases. However, this can vary based on your hardware and query patterns.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border rounded-3 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-600 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        Can you help with zero-downtime migrations?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#blogFAQ">
+                                    <div class="accordion-body text-muted">
+                                        Yes, we specialize in reindexing and version upgrades with zero downtime using alias-based switching and cross-cluster replication.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -317,7 +370,7 @@
             <hr>
             <div class="row mt-4 align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+                    <p class="mb-0">Â© 2026 ES Tuner. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="dropdown">
@@ -343,3 +396,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

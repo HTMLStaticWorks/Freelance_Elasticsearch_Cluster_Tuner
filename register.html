@@ -25,29 +25,41 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #dee2e6;
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             transition: all 0.2s;
-            color: #1e293b;
+            color: var(--dark-color);
             text-decoration: none;
+            background-color: var(--light-color);
         }
         .social-btn:hover {
-            background-color: #f8fafc;
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--primary-color);
+        }
+        [data-bs-theme="dark"] .social-btn {
+            border-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        [data-bs-theme="dark"] .social-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        [data-bs-theme="dark"] .bg-white {
+            background-color: transparent !important;
         }
     </style>
 </head>
 <body class="bg-light">
 
     <div class="position-fixed top-0 end-0 p-3 z-3 d-flex gap-2">
-        <button class="btn btn-link p-0 rtl-toggle-btn" title="Toggle RTL/LTR">
-            <span class="small fw-bold">RTL</span>
+        <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+            <i class="bi bi-translate"></i>
         </button>
-        <button class="btn btn-link p-0 theme-toggle-btn" title="Toggle Theme">
-            <i class="bi bi-moon-fill fs-4"></i>
+        <button class="btn btn-outline-primary rounded-circle theme-toggle-btn d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Toggle Theme">
+            <i class="bi bi-moon-fill"></i>
         </button>
     </div>
 
-    <div class="container d-flex align-items-center justify-content-center min-vh-100 py-5">
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 py-5 pt-lg-5 pt-5 mt-5 mt-lg-0">
         <div class="card auth-card p-4 p-md-5 border-0 shadow-lg rounded-4">
             <div class="text-center mb-4">
                 <a href="index.html" class="navbar-brand justify-content-center mb-4">
@@ -60,11 +72,11 @@
 
             <form action="dashboard.html">
                 <div class="row g-3">
-                    <div class="col-md-6">
+                    <div class="col-12">
                         <label class="form-label fw-600">First Name</label>
                         <input type="text" class="form-control py-3" placeholder="John" required>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-12">
                         <label class="form-label fw-600">Last Name</label>
                         <input type="text" class="form-control py-3" placeholder="Doe" required>
                     </div>

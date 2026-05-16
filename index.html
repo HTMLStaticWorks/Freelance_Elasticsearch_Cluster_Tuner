@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
@@ -30,11 +30,11 @@
                 
                 <div class="d-flex align-items-center order-lg-last ms-2">
                     <div class="d-none d-lg-flex align-items-center">
-                        <button class="btn btn-link p-0 me-2 rtl-toggle-btn" title="Toggle RTL/LTR">
-                            <span>RTL</span>
+                        <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                            <i class="bi bi-translate"></i>
                         </button>
-                        <button class="btn btn-link p-0 me-3 theme-toggle-btn" title="Toggle Theme">
-                            <i class="bi bi-moon-fill fs-4"></i>
+                        <button class="btn btn-outline-primary rounded-circle theme-toggle-btn d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;" title="Toggle Theme">
+                            <i class="bi bi-moon-fill"></i>
                         </button>
                         <a href="login.html" class="btn btn-primary me-2">Login</a>
                         <a href="register.html" class="btn btn-outline-primary">Signup</a>
@@ -50,6 +50,7 @@
                         <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -71,13 +72,14 @@
                 <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 
                 <li class="nav-item d-lg-none mt-4">
                     <div class="d-flex flex-column gap-2 px-2 pt-4 border-top">
-                        <div class="row g-2 mb-2">
+                        <div class="row g-2 mb-3">
                             <div class="col-6">
                                 <a href="login.html" class="btn btn-primary w-100">Login</a>
                             </div>
@@ -85,14 +87,14 @@
                                 <a href="register.html" class="btn btn-outline-primary w-100">Signup</a>
                             </div>
                         </div>
-                        <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 rtl-toggle-btn">
-                            <i class="bi bi-translate"></i>
-                            <span>RTL</span>
-                        </button>
-                        <button class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center gap-2 theme-toggle-btn">
-                            <i class="bi bi-moon-fill"></i>
-                            <span>Switch Theme</span>
-                        </button>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle theme-toggle-btn" style="width: 40px; height: 40px;" title="Toggle Theme">
+                                <i class="bi bi-moon-fill"></i>
+                            </button>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -103,17 +105,14 @@
         <!-- Hero Section -->
         <section class="hero-section d-flex align-items-center">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 fade-in">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center fade-in">
                         <h1 class="display-3 fw-bold mb-4">Optimize Your Elasticsearch Cluster to the Max</h1>
                         <p class="lead mb-4">Professional cluster tuning, shard allocation optimization, and indexing performance enhancement for modern data teams.</p>
-                        <div class="d-flex gap-3">
+                        <div class="d-flex gap-3 justify-content-center">
                             <a href="services.html" class="btn btn-primary">View Services</a>
                             <a href="contact.html" class="btn btn-outline-light">Get a Quote</a>
                         </div>
-                    </div>
-                    <div class="col-lg-6 d-none d-lg-block fade-in">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Elasticsearch Dashboard" class="img-fluid rounded-4 shadow-lg">
                     </div>
                 </div>
             </div>
@@ -160,21 +159,21 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="card p-4 h-100 border-0">
+                        <div class="card p-4 h-100 border-0 text-center">
                             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="Speed Optimization" class="img-fluid rounded-4 mb-4 w-100" style="height: 200px; object-fit: cover;">
                             <h4 class="fw-bold">Speed Optimization</h4>
                             <p class="text-muted">Reduce query latency and improve search throughput with advanced tuning techniques.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card p-4 h-100 border-0">
+                        <div class="card p-4 h-100 border-0 text-center">
                             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Cluster Health" class="img-fluid rounded-4 mb-4 w-100" style="height: 200px; object-fit: cover;">
                             <h4 class="fw-bold">Cluster Health</h4>
                             <p class="text-muted">Ensuring your data stays safe and available with robust replica strategies and shard management.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card p-4 h-100 border-0">
+                        <div class="card p-4 h-100 border-0 text-center">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Indexing Scaling" class="img-fluid rounded-4 mb-4 w-100" style="height: 200px; object-fit: cover;">
                             <h4 class="fw-bold">Indexing Scaling</h4>
                             <p class="text-muted">Scale your ingestion pipeline to handle millions of documents per second without breaking a sweat.</p>
@@ -199,7 +198,7 @@
                     <div class="col-lg-6">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Data Analysis" class="img-fluid rounded-4">
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 text-center">
                         <h2 class="fw-bold mb-4">Mastering Shard Allocation</h2>
                         <p class="text-muted">Improper shard allocation can lead to "hot spots" in your cluster, causing inconsistent performance. We analyze your data patterns to distribute shards optimally across your hardware.</p>
                         <ul class="list-unstyled">
@@ -292,7 +291,7 @@
             <hr>
             <div class="row mt-4 align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">© 2026 ES Tuner. All rights reserved.</p>
+                    <p class="mb-0">Â© 2026 ES Tuner. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="dropdown">
@@ -320,3 +319,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
