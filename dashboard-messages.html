@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ES Tuner</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        .sidebar-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+        }
+        .sidebar-link i {
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar d-none d-lg-block">
+        <div class="px-4 mb-5">
+            <a href="index.html" class="navbar-brand">
+                <i class="bi bi-diagram-3-fill"></i>
+                <span>ES Tuner</span>
+            </a>
+        </div>
+        <nav class="px-3">
+            <a href="dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Analytics</a>
+            <a href="dashboard-users.html" class="sidebar-link"><i class="bi bi-people"></i> Users</a>
+            <a href="dashboard-orders.html" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
+            <a href="dashboard-messages.html" class="sidebar-link active"><i class="bi bi-chat-dots"></i> Messages</a>
+            <hr class="text-white opacity-25 my-4">
+            <a href="login.html" class="sidebar-link mt-5"><i class="bi bi-box-arrow-left"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Mobile Header for Dashboard -->
+    <header class="d-lg-none bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <a href="index.html" class="navbar-brand" style="color: white !important;">
+            <i class="bi bi-diagram-3-fill" style="color: white !important;"></i>
+            <span style="color: white !important;">ES Tuner</span>
+        </a>
+        <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardMobileMenu">
+            <i class="bi bi-list fs-2"></i>
+        </button>
+    </header>
+
+    <div class="offcanvas offcanvas-start bg-primary text-white" tabindex="-1" id="dashboardMobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <nav>
+                <a href="dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Analytics</a>
+                <a href="dashboard-users.html" class="sidebar-link"><i class="bi bi-people"></i> Users</a>
+                <a href="dashboard-orders.html" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
+                <a href="dashboard-messages.html" class="sidebar-link active"><i class="bi bi-chat-dots"></i> Messages</a>
+                <hr class="border-white opacity-25 my-3">
+                <a href="login.html" class="sidebar-link" style="color: rgba(255,100,100,0.85) !important;">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
+            </nav>
+            <!-- Mobile Controls: RTL, Theme, Profile -->
+            <div class="mt-auto pt-4 border-top border-white border-opacity-25">
+                <div class="d-flex align-items-center gap-3 px-2">
+                    <button class="btn btn-outline-light rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                        <span class="fw-bold" style="font-size: 13px;">RTL</span>
+                    </button>
+                    <button class="btn btn-outline-light rounded-circle theme-toggle-btn d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <div class="dropdown">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80" class="rounded-circle cursor-pointer dropdown-toggle" style="width:40px;height:40px;object-fit:cover;" data-bs-toggle="dropdown" alt="User">
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <!-- Topbar -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold mb-1">Messages</h2>
+                <p class="text-muted mb-0 small">Communicate with your clients and monitor system alerts.</p>
+            </div>
+            <div class="d-none d-lg-flex align-items-center gap-3">
+                <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn" style="width:40px;height:40px;"
+                    title="Toggle RTL/LTR"><span class="fw-bold" style="font-size:13px;">RTL</span></button>
+                <button class="btn btn-outline-primary rounded-circle theme-toggle-btn" style="width:40px;height:40px;"
+                    title="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+                <div class="dropdown">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80"
+                        class="rounded-circle cursor-pointer dropdown-toggle"
+                        style="width:40px;height:40px;object-fit:cover;" data-bs-toggle="dropdown" alt="User">
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="login.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Message List -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm h-100 overflow-hidden">
+                    <div class="p-3 border-bottom">
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+                            <input type="text" id="messageSearch" class="form-control border-start-0 ps-0" placeholder="Search messages..." oninput="searchMessages()">
+                        </div>
+                    </div>
+                    <div class="list-group list-group-flush overflow-auto" style="max-height: 600px;" id="messageList">
+                        <a href="#" class="list-group-item list-group-item-action p-3 active border-0" onclick="viewMessage(this, 'Sarah Jenkins', 'The shard rebalancing worked perfectly! Latency is down to 40ms.', '2h ago')">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="fw-bold mb-0">Sarah Jenkins</h6>
+                                <small>2h ago</small>
+                            </div>
+                            <p class="small mb-0 text-truncate">The shard rebalancing worked perfectly! Latency is down to 40ms.</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action p-3 border-0" onclick="viewMessage(this, 'Mark Spencer', 'Can we schedule a call to discuss cross-cluster search implementation?', '5h ago')">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="fw-bold mb-0">Mark Spencer</h6>
+                                <small>5h ago</small>
+                            </div>
+                            <p class="small text-muted mb-0 text-truncate">Can we schedule a call to discuss cross-cluster search...</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action p-3 border-0" onclick="viewMessage(this, 'Priya Kapoor', 'Regarding the indexing performance on the production cluster...', 'Yesterday')">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="fw-bold mb-0">Priya Kapoor</h6>
+                                <small>Yesterday</small>
+                            </div>
+                            <p class="small text-muted mb-0 text-truncate">Regarding the indexing performance on the production cluster...</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action p-3 border-0" onclick="viewMessage(this, 'System Alert', 'Alert: Cluster node ES-04 is reaching 85% capacity.', 'May 14')">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="fw-bold mb-0 text-danger">System Alert</h6>
+                                <small>May 14</small>
+                            </div>
+                            <p class="small text-muted mb-0 text-truncate">Alert: Cluster node ES-04 is reaching 85% capacity.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Detail -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm h-100" id="messageDetail">
+                    <div class="card-header bg-transparent p-4 border-bottom d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width: 48px; height: 48px;" id="senderAvatar">SJ</div>
+                            <div>
+                                <h5 class="fw-bold mb-0" id="senderName">Sarah Jenkins</h5>
+                                <small class="text-muted" id="messageTime">2h ago</small>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary btn-sm rounded-circle" title="Archive" onclick="archiveMessage()"><i class="bi bi-archive"></i></button>
+                            <button class="btn btn-outline-danger btn-sm rounded-circle" title="Delete" onclick="deleteMessage()"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body p-4 overflow-auto" style="min-height: 300px;">
+                        <p id="messageBody" class="lead">The shard rebalancing worked perfectly! Latency is down to 40ms. Our team is very happy with the results. Looking forward to our next optimization session.</p>
+                        
+                        <div class="mt-5 border-top pt-4">
+                            <h6 class="fw-bold mb-3">Quick Reply</h6>
+                            <textarea id="replyText" class="form-control mb-3" rows="4" placeholder="Type your message here..."></textarea>
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-primary px-4" onclick="sendReply()"><i class="bi bi-send me-2"></i>Send Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Empty State (Hidden by default) -->
+                <div class="card border-0 shadow-sm h-100 d-none" id="emptyMessage">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center text-center p-5">
+                        <i class="bi bi-chat-left-dots fs-1 text-muted mb-3"></i>
+                        <h5 class="fw-bold">Select a message</h5>
+                        <p class="text-muted">Choose a message from the list to view its details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function viewMessage(el, name, body, time) {
+            event.preventDefault();
+            // Update UI
+            document.querySelectorAll('#messageList .list-group-item').forEach(item => item.classList.remove('active'));
+            el.classList.add('active');
+            el.querySelector('p').classList.remove('text-muted');
+            
+            document.getElementById('senderName').innerText = name;
+            document.getElementById('messageBody').innerText = body;
+            document.getElementById('messageTime').innerText = time;
+            document.getElementById('senderAvatar').innerText = name.split(' ').map(n => n[0]).join('');
+            
+            // Show detail, hide empty
+            document.getElementById('messageDetail').classList.remove('d-none');
+            document.getElementById('emptyMessage').classList.add('d-none');
+        }
+
+        function deleteMessage() {
+            if(confirm('Are you sure you want to delete this message?')) {
+                const active = document.querySelector('#messageList .list-group-item.active');
+                if(active) {
+                    active.remove();
+                    showEmptyState();
+                }
+            }
+        }
+
+        function archiveMessage() {
+            const active = document.querySelector('#messageList .list-group-item.active');
+            if(active) {
+                active.remove();
+                showEmptyState();
+                showToast('Message archived successfully', 'info');
+            }
+        }
+
+        function showEmptyState() {
+            document.getElementById('messageDetail').classList.add('d-none');
+            document.getElementById('emptyMessage').classList.remove('d-none');
+        }
+
+        function searchMessages() {
+            const search = document.getElementById('messageSearch').value.toLowerCase();
+            document.querySelectorAll('#messageList .list-group-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(search) ? '' : 'none';
+            });
+        }
+
+        function sendReply() {
+            const reply = document.getElementById('replyText').value;
+            if(!reply.trim()) {
+                alert('Please type a message before sending.');
+                return;
+            }
+            
+            document.getElementById('replyText').value = '';
+            showToast('Reply sent successfully!', 'success');
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = 'position-fixed bottom-0 end-0 p-3';
+            toast.style.zIndex = '1055';
+            toast.innerHTML = `
+                <div class="toast show align-items-center text-white bg-\${type === 'success' ? 'success' : 'info'} border-0" role="alert">
+                    <div class="d-flex">
+                        <div class="toast-body">\${message}</div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+    </script>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

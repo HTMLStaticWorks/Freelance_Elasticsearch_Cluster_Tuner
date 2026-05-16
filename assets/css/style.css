@@ -130,26 +130,33 @@ body {
 /* Fix navbar spacing for iPad/1024px (lg breakpoint) to prevent horizontal overflow */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .navbar-brand {
-        font-size: 1.3rem !important;
+        font-size: 1.2rem !important;
+        gap: 5px;
     }
     .navbar-brand i {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
     }
     .navbar-brand span {
-        display: none; /* Hide text to save space */
+        display: inline-block; /* Show text */
     }
     .nav-link {
-        padding: 8px 12px !important;
-        margin: 0 1px;
-        font-size: 14px;
+        padding: 8px 6px !important;
+        margin: 0;
+        font-size: 12px;
     }
     .navbar .btn {
-        padding: 6px 14px;
-        font-size: 13px;
+        padding: 6px 10px;
+        font-size: 12px;
     }
-    #themeToggle, #rtlToggle {
+    .theme-toggle-btn, .rtl-toggle-btn {
         width: 34px !important;
         height: 34px !important;
+    }
+    .theme-toggle-btn i, .rtl-toggle-btn span {
+        font-size: 11px !important;
+    }
+    .d-none.d-lg-flex .me-2, .d-none.d-lg-flex .me-3 {
+        margin-right: 0.3rem !important;
     }
 }
 
@@ -377,13 +384,44 @@ footer .input-group .form-control:focus {
 /* Dashboard Styles */
 .dashboard-sidebar {
     height: 100vh;
-    background-color: var(--primary-color);
+    background-color: #005571;
     color: white;
     position: fixed;
     left: 0;
     top: 0;
     width: 280px;
     padding-top: 20px;
+}
+
+[data-bs-theme="dark"] .dashboard-sidebar {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .dashboard-sidebar .navbar-brand,
+[data-bs-theme="dark"] .dashboard-sidebar .navbar-brand i,
+[data-bs-theme="dark"] .dashboard-sidebar .navbar-brand span {
+    color: #00bfb3 !important;
+}
+
+[data-bs-theme="dark"] .sidebar-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+[data-bs-theme="dark"] .sidebar-link:hover,
+[data-bs-theme="dark"] .sidebar-link.active {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark mode for mobile dashboard offcanvas */
+[data-bs-theme="dark"] #dashboardMobileMenu {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .d-lg-none.bg-primary {
+    background-color: #0f172a !important;
 }
 
 .dashboard-content {
@@ -450,6 +488,10 @@ footer .input-group .form-control:focus {
 .bg-themed-section .lead,
 .bg-themed-section .accordion-button {
     color: #ffffff !important;
+}
+
+.bg-themed-section .accordion-button::after {
+    filter: brightness(0) invert(1);
 }
 
 [data-bs-theme="dark"] .bg-themed-section {

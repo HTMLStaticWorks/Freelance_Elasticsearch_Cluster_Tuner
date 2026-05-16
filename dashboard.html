@@ -47,21 +47,20 @@
             </a>
         </div>
         <nav class="px-3">
-            <a href="#analytics" class="sidebar-link active"><i class="bi bi-speedometer2"></i> Analytics</a>
-            <a href="#users" class="sidebar-link"><i class="bi bi-people"></i> Users</a>
-            <a href="#orders" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
-            <a href="#messages" class="sidebar-link"><i class="bi bi-chat-dots"></i> Messages</a>
+            <a href="dashboard.html" class="sidebar-link active"><i class="bi bi-speedometer2"></i> Analytics</a>
+            <a href="dashboard-users.html" class="sidebar-link"><i class="bi bi-people"></i> Users</a>
+            <a href="dashboard-orders.html" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
+            <a href="dashboard-messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i> Messages</a>
             <hr class="text-white opacity-25 my-4">
-            <a href="index.html" class="sidebar-link"><i class="bi bi-house"></i> View Website</a>
             <a href="login.html" class="sidebar-link mt-5"><i class="bi bi-box-arrow-left"></i> Logout</a>
         </nav>
     </aside>
 
     <!-- Mobile Header for Dashboard -->
     <header class="d-lg-none bg-primary text-white p-3 d-flex justify-content-between align-items-center">
-        <a href="index.html" class="navbar-brand">
-            <i class="bi bi-diagram-3-fill"></i>
-            <span>ES Tuner</span>
+        <a href="index.html" class="navbar-brand" style="color: white !important;">
+            <i class="bi bi-diagram-3-fill" style="color: white !important;"></i>
+            <span style="color: white !important;">ES Tuner</span>
         </a>
         <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardMobileMenu">
             <i class="bi bi-list fs-2"></i>
@@ -73,13 +72,37 @@
             <h5 class="offcanvas-title fw-bold">Menu</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body d-flex flex-column">
             <nav>
-                <a href="#analytics" class="sidebar-link active"><i class="bi bi-speedometer2"></i> Analytics</a>
-                <a href="#users" class="sidebar-link"><i class="bi bi-people"></i> Users</a>
-                <a href="#orders" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
-                <a href="#messages" class="sidebar-link"><i class="bi bi-chat-dots"></i> Messages</a>
+                <a href="dashboard.html" class="sidebar-link active"><i class="bi bi-speedometer2"></i> Analytics</a>
+                <a href="dashboard-users.html" class="sidebar-link"><i class="bi bi-people"></i> Users</a>
+                <a href="dashboard-orders.html" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
+                <a href="dashboard-messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i> Messages</a>
+                <hr class="border-white opacity-25 my-3">
+                <a href="login.html" class="sidebar-link text-danger-emphasis" style="color: rgba(255,100,100,0.85) !important;">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
             </nav>
+            <!-- Mobile Controls: RTL, Theme, Profile -->
+            <div class="mt-auto pt-4 border-top border-white border-opacity-25">
+                <div class="d-flex align-items-center gap-3 px-2">
+                    <button class="btn btn-outline-light rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                        <span class="fw-bold" style="font-size: 13px;">RTL</span>
+                    </button>
+                    <button class="btn btn-outline-light rounded-circle theme-toggle-btn d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <div class="dropdown">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80" class="rounded-circle cursor-pointer dropdown-toggle" style="width:40px;height:40px;object-fit:cover;" data-bs-toggle="dropdown" alt="User">
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -88,15 +111,16 @@
         <!-- Dashboard Topbar -->
         <div class="d-flex justify-content-between align-items-center mb-5">
             <h2 class="fw-bold mb-0">Dashboard Overview</h2>
-            <div class="d-flex align-items-center gap-3">
+            <!-- Topbar controls: desktop only -->
+            <div class="d-none d-lg-flex align-items-center gap-3">
                 <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
-                    <i class="bi bi-translate"></i>
+                    <span class="fw-bold" style="font-size: 13px;">RTL</span>
                 </button>
                 <button class="btn btn-outline-primary rounded-circle theme-toggle-btn" style="width: 40px; height: 40px;" title="Toggle Theme">
                     <i class="bi bi-moon-fill"></i>
                 </button>
                 <div class="dropdown">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80" class="rounded-circle cursor-pointer dropdown-toggle" data-bs-toggle="dropdown" alt="User">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80" class="rounded-circle cursor-pointer dropdown-toggle" style="width:40px;height:40px;object-fit:cover;" data-bs-toggle="dropdown" alt="User">
                     <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -141,14 +165,125 @@
             </div>
 
             <div class="card border-0 shadow-sm p-4">
-                <h5 class="fw-bold mb-4">Cluster Performance Trends</h5>
-                <div style="height: 300px;" class="bg-light rounded-3 d-flex align-items-center justify-content-center border border-dashed">
-                    <div class="text-center text-muted">
-                        <i class="bi bi-graph-up fs-1 mb-2"></i>
-                        <p>Performance Chart Mockup (Integration Ready)</p>
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                    <div>
+                        <h5 class="fw-bold mb-1">Cluster Performance Trends</h5>
+                        <p class="text-muted small mb-0">Last 7 weeks — Query Latency, Index Throughput &amp; Cluster Health</p>
+                    </div>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <span class="d-flex align-items-center gap-2 small"><span style="width:12px;height:12px;background:#005571;border-radius:50%;display:inline-block;"></span>Query Latency (ms)</span>
+                        <span class="d-flex align-items-center gap-2 small"><span style="width:12px;height:12px;background:#00bfb3;border-radius:50%;display:inline-block;"></span>Index Throughput (k/s)</span>
+                        <span class="d-flex align-items-center gap-2 small"><span style="width:12px;height:12px;background:#10b981;border-radius:50%;display:inline-block;"></span>Cluster Health (%)</span>
+                    </div>
+                </div>
+
+                <!-- SVG Chart -->
+                <div class="w-100" style="overflow-x:auto;">
+                <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:320px;font-family:'Inter',sans-serif;">
+
+                    <!-- Grid lines -->
+                    <line x1="60" y1="20" x2="740" y2="20" stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+                    <line x1="60" y1="70" x2="740" y2="70" stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+                    <line x1="60" y1="120" x2="740" y2="120" stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+                    <line x1="60" y1="170" x2="740" y2="170" stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+                    <line x1="60" y1="220" x2="740" y2="220" stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+
+                    <!-- Y-axis labels -->
+                    <text x="50" y="24" text-anchor="end" font-size="11" fill="currentColor" opacity="0.5">100</text>
+                    <text x="50" y="74" text-anchor="end" font-size="11" fill="currentColor" opacity="0.5">80</text>
+                    <text x="50" y="124" text-anchor="end" font-size="11" fill="currentColor" opacity="0.5">60</text>
+                    <text x="50" y="174" text-anchor="end" font-size="11" fill="currentColor" opacity="0.5">40</text>
+                    <text x="50" y="224" text-anchor="end" font-size="11" fill="currentColor" opacity="0.5">20</text>
+
+                    <!-- X-axis labels (weeks) -->
+                    <text x="120" y="248" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">Wk 1</text>
+                    <text x="220" y="248" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">Wk 2</text>
+                    <text x="320" y="248" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">Wk 3</text>
+                    <text x="420" y="248" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">Wk 4</text>
+                    <text x="520" y="248" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">Wk 5</text>
+                    <text x="620" y="248" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">Wk 6</text>
+                    <text x="720" y="248" text-anchor="middle" font-size="11" fill="currentColor" opacity="0.5">Wk 7</text>
+
+                    <!-- Gradient fills -->
+                    <defs>
+                        <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#005571" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#005571" stop-opacity="0.02"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#00bfb3" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#00bfb3" stop-opacity="0.02"/>
+                        </linearGradient>
+                        <linearGradient id="grad3" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#10b981" stop-opacity="0.02"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Query Latency area fill (higher = worse, so starts mid) -->
+                    <polygon points="120,170 220,145 320,120 420,95 520,80 620,65 720,55 720,220 120,220" fill="url(#grad1)"/>
+                    <!-- Query Latency line -->
+                    <polyline points="120,170 220,145 320,120 420,95 520,80 620,65 720,55"
+                        fill="none" stroke="#005571" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    <!-- Dots -->
+                    <circle cx="120" cy="170" r="4" fill="#005571"/>
+                    <circle cx="220" cy="145" r="4" fill="#005571"/>
+                    <circle cx="320" cy="120" r="4" fill="#005571"/>
+                    <circle cx="420" cy="95"  r="4" fill="#005571"/>
+                    <circle cx="520" cy="80"  r="4" fill="#005571"/>
+                    <circle cx="620" cy="65"  r="4" fill="#005571"/>
+                    <circle cx="720" cy="55"  r="4" fill="#005571"/>
+
+                    <!-- Index Throughput area fill -->
+                    <polygon points="120,195 220,175 320,150 420,120 520,100 620,85 720,70 720,220 120,220" fill="url(#grad2)"/>
+                    <!-- Index Throughput line -->
+                    <polyline points="120,195 220,175 320,150 420,120 520,100 620,85 720,70"
+                        fill="none" stroke="#00bfb3" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6,3"/>
+                    <circle cx="120" cy="195" r="4" fill="#00bfb3"/>
+                    <circle cx="220" cy="175" r="4" fill="#00bfb3"/>
+                    <circle cx="320" cy="150" r="4" fill="#00bfb3"/>
+                    <circle cx="420" cy="120" r="4" fill="#00bfb3"/>
+                    <circle cx="520" cy="100" r="4" fill="#00bfb3"/>
+                    <circle cx="620" cy="85"  r="4" fill="#00bfb3"/>
+                    <circle cx="720" cy="70"  r="4" fill="#00bfb3"/>
+
+                    <!-- Cluster Health area fill -->
+                    <polygon points="120,40 220,38 320,42 420,35 520,33 620,30 720,28 720,220 120,220" fill="url(#grad3)"/>
+                    <!-- Cluster Health line (stays near top = healthy) -->
+                    <polyline points="120,40 220,38 320,42 420,35 520,33 620,30 720,28"
+                        fill="none" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    <circle cx="120" cy="40"  r="4" fill="#10b981"/>
+                    <circle cx="220" cy="38"  r="4" fill="#10b981"/>
+                    <circle cx="320" cy="42"  r="4" fill="#10b981"/>
+                    <circle cx="420" cy="35"  r="4" fill="#10b981"/>
+                    <circle cx="520" cy="33"  r="4" fill="#10b981"/>
+                    <circle cx="620" cy="30"  r="4" fill="#10b981"/>
+                    <circle cx="720" cy="28"  r="4" fill="#10b981"/>
+
+                    <!-- Value labels on last point -->
+                    <text x="730" y="52"  font-size="10" fill="#005571" font-weight="600">42ms</text>
+                    <text x="730" y="67"  font-size="10" fill="#00bfb3" font-weight="600">9.4k/s</text>
+                    <text x="730" y="25"  font-size="10" fill="#10b981" font-weight="600">99.9%</text>
+                </svg>
+                </div>
+
+                <!-- Bottom summary row -->
+                <div class="row g-3 mt-3 pt-3 border-top">
+                    <div class="col-md-4 text-center">
+                        <div class="small text-muted mb-1">Peak Query Latency</div>
+                        <div class="fw-bold text-danger">178ms <span class="text-muted fw-normal">(Wk 1)</span></div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="small text-muted mb-1">Current Query Latency</div>
+                        <div class="fw-bold text-success">42ms <i class="bi bi-arrow-down-short"></i></div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="small text-muted mb-1">Overall Improvement</div>
+                        <div class="fw-bold" style="color:var(--primary-color)">76% Faster <i class="bi bi-lightning-charge-fill"></i></div>
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!-- Orders Table Section -->

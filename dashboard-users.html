@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ES Tuner</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        .sidebar-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-link i {
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar d-none d-lg-block">
+        <div class="px-4 mb-5">
+            <a href="index.html" class="navbar-brand">
+                <i class="bi bi-diagram-3-fill"></i>
+                <span>ES Tuner</span>
+            </a>
+        </div>
+        <nav class="px-3">
+            <a href="dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Analytics</a>
+            <a href="dashboard-users.html" class="sidebar-link active"><i class="bi bi-people"></i> Users</a>
+            <a href="dashboard-orders.html" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
+            <a href="dashboard-messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i> Messages</a>
+            <hr class="text-white opacity-25 my-4">
+            <a href="login.html" class="sidebar-link mt-5"><i class="bi bi-box-arrow-left"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Mobile Header for Dashboard -->
+    <header class="d-lg-none bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <a href="index.html" class="navbar-brand" style="color: white !important;">
+            <i class="bi bi-diagram-3-fill" style="color: white !important;"></i>
+            <span style="color: white !important;">ES Tuner</span>
+        </a>
+        <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#dashboardMobileMenu">
+            <i class="bi bi-list fs-2"></i>
+        </button>
+    </header>
+
+    <div class="offcanvas offcanvas-start bg-primary text-white" tabindex="-1" id="dashboardMobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <nav>
+                <a href="dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i> Analytics</a>
+                <a href="dashboard-users.html" class="sidebar-link active"><i class="bi bi-people"></i> Users</a>
+                <a href="dashboard-orders.html" class="sidebar-link"><i class="bi bi-cart3"></i> Orders</a>
+                <a href="dashboard-messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i> Messages</a>
+                <hr class="border-white opacity-25 my-3">
+                <a href="login.html" class="sidebar-link" style="color: rgba(255,100,100,0.85) !important;">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
+            </nav>
+            <!-- Mobile Controls: RTL, Theme, Profile -->
+            <div class="mt-auto pt-4 border-top border-white border-opacity-25">
+                <div class="d-flex align-items-center gap-3 px-2">
+                    <button
+                        class="btn btn-outline-light rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
+                        <span class="fw-bold" style="font-size: 13px;">RTL</span>
+                    </button>
+                    <button
+                        class="btn btn-outline-light rounded-circle theme-toggle-btn d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;" title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <div class="dropdown">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80"
+                            class="rounded-circle cursor-pointer dropdown-toggle"
+                            style="width:40px;height:40px;object-fit:cover;" data-bs-toggle="dropdown" alt="User">
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+        <!-- Topbar -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold mb-1">User Management</h2>
+                <p class="text-muted mb-0 small">Manage client accounts, roles and cluster access permissions.</p>
+            </div>
+            <div class="d-none d-lg-flex align-items-center gap-3">
+                <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn" style="width:40px;height:40px;"
+                    title="Toggle RTL/LTR"><span class="fw-bold" style="font-size:13px;">RTL</span></button>
+                <button class="btn btn-outline-primary rounded-circle theme-toggle-btn" style="width:40px;height:40px;"
+                    title="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+                <div class="dropdown">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80"
+                        class="rounded-circle cursor-pointer dropdown-toggle"
+                        style="width:40px;height:40px;object-fit:cover;" data-bs-toggle="dropdown" alt="User">
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="login.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stat Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-6 col-md-3">
+                <div class="card p-4 border-0 shadow-sm text-center">
+                    <div class="fs-1 fw-bold" style="color:var(--primary-color)">24</div>
+                    <div class="small text-muted mt-1">Total Users</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card p-4 border-0 shadow-sm text-center">
+                    <div class="fs-1 fw-bold text-success">18</div>
+                    <div class="small text-muted mt-1">Active</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card p-4 border-0 shadow-sm text-center">
+                    <div class="fs-1 fw-bold text-warning">4</div>
+                    <div class="small text-muted mt-1">Pending Invite</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card p-4 border-0 shadow-sm text-center">
+                    <div class="fs-1 fw-bold text-danger">2</div>
+                    <div class="small text-muted mt-1">Suspended</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search + Filter + Add -->
+        <div class="card border-0 shadow-sm p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+                    <div class="input-group" style="max-width:260px;">
+                        <span class="input-group-text bg-transparent border-end-0"><i
+                                class="bi bi-search text-muted"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="Search users..."
+                            id="userSearch" oninput="filterUsers()">
+                    </div>
+                    <select class="form-select" style="max-width:150px;" id="roleFilter" onchange="filterUsers()">
+                        <option value="">All Roles</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Viewer">Viewer</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                    <i class="bi bi-person-plus-fill me-2"></i>Add User
+                </button>
+            </div>
+
+            <!-- Role Tabs -->
+            <ul class="nav nav-pills mb-4 gap-2" id="userTabs">
+                <li class="nav-item"><a class="nav-link active" href="#" onclick="setTab(this,'all')">All Users</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="setTab(this,'Admin')">Admins</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="setTab(this,'Engineer')">Engineers</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="setTab(this,'Viewer')">Viewers</a></li>
+            </ul>
+
+            <!-- Users Table -->
+            <div class="table-responsive">
+                <table class="table table-hover align-middle" id="usersTable">
+                    <thead class="table-light">
+                        <tr>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Cluster Access</th>
+                            <th>Last Active</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-role="Admin">
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&h=40&q=80"
+                                        class="rounded-circle" width="40" height="40" style="object-fit:cover;" alt="">
+                                    <div>
+                                        <div class="fw-bold">James Harmon</div>
+                                        <div class="small text-muted">j.harmon@datastream.io</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-primary">Admin</span></td>
+                            <td>12 Clusters</td>
+                            <td>Just now</td>
+                            <td><span class="badge bg-success">Active</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown">Action</button>
+                                    <ul class="dropdown-menu shadow-sm border-0">
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Edit</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Reset
+                                                Password</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i
+                                                    class="bi bi-slash-circle me-2"></i>Suspend</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-role="Engineer">
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white"
+                                        style="width:40px;height:40px;background:#00bfb3;flex-shrink:0;">SJ</div>
+                                    <div>
+                                        <div class="fw-bold">Sarah Jenkins</div>
+                                        <div class="small text-muted">s.jenkins@searchlab.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-info text-dark">Engineer</span></td>
+                            <td>7 Clusters</td>
+                            <td>2h ago</td>
+                            <td><span class="badge bg-success">Active</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown">Action</button>
+                                    <ul class="dropdown-menu shadow-sm border-0">
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Edit</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Reset
+                                                Password</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i
+                                                    class="bi bi-slash-circle me-2"></i>Suspend</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-role="Engineer">
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white"
+                                        style="width:40px;height:40px;background:#005571;flex-shrink:0;">MS</div>
+                                    <div>
+                                        <div class="fw-bold">Mark Spencer</div>
+                                        <div class="small text-muted">m.spencer@elasticorp.net</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-info text-dark">Engineer</span></td>
+                            <td>5 Clusters</td>
+                            <td>5h ago</td>
+                            <td><span class="badge bg-success">Active</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown">Action</button>
+                                    <ul class="dropdown-menu shadow-sm border-0">
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Edit</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i>Reset
+                                                Password</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i
+                                                    class="bi bi-slash-circle me-2"></i>Suspend</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-role="Viewer">
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white"
+                                        style="width:40px;height:40px;background:#6c757d;flex-shrink:0;">PK</div>
+                                    <div>
+                                        <div class="fw-bold">Priya Kapoor</div>
+                                        <div class="small text-muted">p.kapoor@nodesync.io</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-secondary">Viewer</span></td>
+                            <td>2 Clusters</td>
+                            <td>1 day ago</td>
+                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown">Action</button>
+                                    <ul class="dropdown-menu shadow-sm border-0">
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Edit</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i>Resend
+                                                Invite</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i
+                                                    class="bi bi-trash me-2"></i>Remove</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-role="Admin">
+                            <td>
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white"
+                                        style="width:40px;height:40px;background:#dc3545;flex-shrink:0;">RL</div>
+                                    <div>
+                                        <div class="fw-bold">Robert Liu</div>
+                                        <div class="small text-muted">r.liu@clusterops.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-primary">Admin</span></td>
+                            <td>All Clusters</td>
+                            <td>3 days ago</td>
+                            <td><span class="badge bg-danger">Suspended</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown">Action</button>
+                                    <ul class="dropdown-menu shadow-sm border-0">
+                                        <li><a class="dropdown-item text-success" href="#"><i
+                                                    class="bi bi-check-circle me-2"></i>Reactivate</a></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i
+                                                    class="bi bi-trash me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">Invite New User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <form id="addUserForm">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name</label>
+                            <input type="text" id="newName" class="form-control" placeholder="e.g. John Smith" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Email Address</label>
+                            <input type="email" id="newEmail" class="form-control" placeholder="john@company.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Role</label>
+                            <select id="newRole" class="form-select">
+                                <option value="Admin">Admin</option>
+                                <option value="Engineer">Engineer</option>
+                                <option value="Viewer">Viewer</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Cluster Access</label>
+                            <select id="newAccess" class="form-select">
+                                <option>All Clusters</option>
+                                <option>Production Only</option>
+                                <option>Staging Only</option>
+                                <option>Custom (specify below)</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="addUser()"><i class="bi bi-send me-2"></i>Send Invite</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterUsers() {
+            const search = document.getElementById('userSearch').value.toLowerCase();
+            const role = document.getElementById('roleFilter').value;
+            document.querySelectorAll('#usersTable tbody tr').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const rowRole = row.dataset.role;
+                const matchesSearch = text.includes(search);
+                const matchesRole = !role || rowRole === role;
+                row.style.display = matchesSearch && matchesRole ? '' : 'none';
+            });
+        }
+
+        function setTab(el, role) {
+            event.preventDefault();
+            document.querySelectorAll('#userTabs .nav-link').forEach(l => l.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('roleFilter').value = role === 'all' ? '' : role;
+            filterUsers();
+        }
+
+        let editingRow = null;
+
+        function addUser() {
+            const name = document.getElementById('newName').value;
+            const email = document.getElementById('newEmail').value;
+            const role = document.getElementById('newRole').value;
+            const access = document.getElementById('newAccess').value;
+
+            if (!name || !email) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            if (editingRow) {
+                // Update existing row
+                const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+                editingRow.dataset.role = role;
+                editingRow.cells[0].querySelector('.fw-bold').innerText = name;
+                editingRow.cells[0].querySelector('.small').innerText = email;
+                editingRow.cells[0].querySelector('.rounded-circle').innerText = initials;
+                editingRow.cells[1].innerHTML = `<span class="badge bg-${role === 'Admin' ? 'primary' : (role === 'Engineer' ? 'info text-dark' : 'secondary')}">${role}</span>`;
+                editingRow.cells[2].innerText = access;
+                
+                showToast('User updated successfully!');
+                editingRow = null;
+                document.querySelector('#addUserModal .modal-title').innerText = 'Invite New User';
+                document.querySelector('#addUserModal .btn-primary').innerHTML = '<i class="bi bi-send me-2"></i>Send Invite';
+            } else {
+                // Create new row
+                const tbody = document.querySelector('#usersTable tbody');
+                const initials = name.split(' ').map(n => n[0]).join('').toUpperCase();
+                const colors = ['#00bfb3', '#005571', '#6c757d', '#dc3545', '#0d6efd'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+                const newRow = document.createElement('tr');
+                newRow.dataset.role = role;
+                newRow.innerHTML = `
+                    <td>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white"
+                                style="width:40px;height:40px;background:${randomColor};flex-shrink:0;">${initials}</div>
+                            <div>
+                                <div class="fw-bold">${name}</div>
+                                <div class="small text-muted">${email}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-${role === 'Admin' ? 'primary' : (role === 'Engineer' ? 'info text-dark' : 'secondary')}">${role}</span></td>
+                    <td>${access}</td>
+                    <td>Just now</td>
+                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown">Action</button>
+                            <ul class="dropdown-menu shadow-sm border-0">
+                                <li><a class="dropdown-item" href="#" onclick="editUser(this)"><i class="bi bi-pencil me-2"></i>Edit</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i>Resend Invite</a></li>
+                                <li><a class="dropdown-item text-danger" href="#" onclick="deleteUser(this)"><i class="bi bi-trash me-2"></i>Remove</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                `;
+                tbody.prepend(newRow);
+                showToast('User invited successfully!');
+            }
+
+            // Reset and close modal
+            document.getElementById('addUserForm').reset();
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addUserModal'));
+            modal.hide();
+        }
+
+        function editUser(btn) {
+            editingRow = btn.closest('tr');
+            const name = editingRow.cells[0].querySelector('.fw-bold').innerText;
+            const email = editingRow.cells[0].querySelector('.small').innerText;
+            const role = editingRow.dataset.role;
+            const access = editingRow.cells[2].innerText;
+
+            document.getElementById('newName').value = name;
+            document.getElementById('newEmail').value = email;
+            document.getElementById('newRole').value = role;
+            document.getElementById('newAccess').value = access;
+
+            document.querySelector('#addUserModal .modal-title').innerText = 'Edit User';
+            document.querySelector('#addUserModal .btn-primary').innerHTML = '<i class="bi bi-check-circle me-2"></i>Update User';
+            
+            const modal = new bootstrap.Modal(document.getElementById('addUserModal'));
+            modal.show();
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'position-fixed bottom-0 end-0 p-3';
+            toast.style.zIndex = '1055';
+            toast.innerHTML = `
+                <div class="toast show align-items-center text-white bg-success border-0" role="alert">
+                    <div class="d-flex">
+                        <div class="toast-body">${message}</div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        function deleteUser(btn) {
+            if (confirm('Are you sure you want to remove this user?')) {
+                btn.closest('tr').remove();
+            }
+        }
+
+        function suspendUser(btn) {
+            const row = btn.closest('tr');
+            const statusCell = row.cells[4];
+            statusCell.innerHTML = '<span class="badge bg-danger">Suspended</span>';
+            btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Reactivate';
+            btn.className = 'dropdown-item text-success';
+            btn.setAttribute('onclick', 'reactivateUser(this)');
+        }
+
+        function reactivateUser(btn) {
+            const row = btn.closest('tr');
+            const statusCell = row.cells[4];
+            statusCell.innerHTML = '<span class="badge bg-success">Active</span>';
+            btn.innerHTML = '<i class="bi bi-slash-circle me-2"></i>Suspend';
+            btn.className = 'dropdown-item text-danger';
+            btn.setAttribute('onclick', 'suspendUser(this)');
+        }
+
+        // Initialize existing rows with functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.dropdown-item.text-danger').forEach(item => {
+                if (item.textContent.includes('Suspend')) {
+                    item.setAttribute('onclick', 'suspendUser(this)');
+                } else if (item.textContent.includes('Remove') || item.textContent.includes('Delete')) {
+                    item.setAttribute('onclick', 'deleteUser(this)');
+                }
+            });
+            document.querySelectorAll('.dropdown-item.text-success').forEach(item => {
+                if (item.textContent.includes('Reactivate')) {
+                    item.setAttribute('onclick', 'reactivateUser(this)');
+                }
+            });
+        });
+    </script>
+    </main>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
