@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Freelance Elasticsearch Cluster Tuner</title>
+    <title>Case Studies | Freelance Elasticsearch Cluster Tuner</title>
+    <meta name="description" content="Read real-world case studies of Elasticsearch cluster tuning and performance optimization.">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,12 +17,23 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <style>
-        .about-hero {
-            background: linear-gradient(rgba(0, 85, 113, 0.85), rgba(0, 85, 113, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80');
+        .case-studies-hero {
+            background: linear-gradient(rgba(0, 85, 113, 0.85), rgba(0, 85, 113, 0.85)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             padding: 100px 0;
             color: white;
+        }
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            text-align: left;
+        }
+        .code-added {
+            color: #b5cea8;
         }
     </style>
 </head>
@@ -56,8 +68,9 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
                         <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="case-studies.html">Case Studies</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -78,13 +91,14 @@
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
                 <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="case-studies.html">Case Studies</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-                <!-- Auth & Toggles (Mobile Only) -->
+                
                 <li class="nav-item d-lg-none mt-4">
                     <div class="d-flex flex-column gap-2 px-2 pt-4 border-top">
                         <div class="row g-2 mb-3">
@@ -111,106 +125,161 @@
 
     <main>
         <!-- Page Header -->
-        <section class="about-hero text-center">
+        <section class="case-studies-hero text-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <h1 class="display-4 fw-bold mb-4">My Story & Vision</h1>
-                        <p class="lead mb-0">I am a dedicated search engineer who believes that every byte of data tells a story. My journey began in 2015 when I realized that many companies were struggling with the complexities of distributed search. Today, I help global enterprises scale their data infrastructure with precision and care.</p>
+                        <h1 class="display-4 fw-bold mb-4">Case Studies & Optimization Examples</h1>
+                        <p class="lead mb-0">See how my specialized Elasticsearch tuning has solved real-world performance issues, dramatically reduced latency, and cut infrastructure costs.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- My Mission -->
+        <!-- Case Study 1 -->
         <section class="py-5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Expertise" class="img-fluid rounded-4 shadow">
-                    </div>
-                    <div class="col-lg-6">
-                        <h2 class="fw-bold mb-3">My Mission</h2>
-                        <p class="text-muted">I started ES Tuner with a simple goal: to make enterprise-grade Elasticsearch expertise accessible to companies of all sizes. Search shouldn't be a bottleneck for your business growth.</p>
-                        <p class="text-muted">With over a decade of experience in distributed systems and information retrieval, I have seen it all—from massive data loss recovery to ultra-fast real-time analytics tuning.</p>
-                        <div class="row g-3 mt-3">
+                        <span class="badge bg-primary mb-3">Global Retailer</span>
+                        <h2 class="fw-bold mb-3">Scaling E-commerce Search for Black Friday Traffic</h2>
+                        <p class="text-muted"><strong>Client Industry:</strong> E-commerce / Retail</p>
+                        
+                        <h5 class="fw-bold mt-4">The Performance Issue</h5>
+                        <p class="text-muted">The client's product search API was experiencing intermittent 500ms+ latency spikes during peak traffic. Additionally, their cluster suffered from "hot spots" due to uneven shard allocation, leading to frequent garbage collection (GC) pauses on heavily loaded nodes.</p>
+                        
+                        <h5 class="fw-bold mt-4">My Tuning Approach</h5>
+                        <p class="text-muted">I conducted a comprehensive audit of their index settings and query DSL. I implemented custom routing based on product categories to ensure related data lived on the same shards, significantly reducing cross-node network traffic. I also adjusted the Index Lifecycle Management (ILM) to aggressively roll over large indices.</p>
+                        
+                        <h5 class="fw-bold mt-4">Measurable Outcomes</h5>
+                        <div class="row g-3 mt-2">
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span class="fw-bold">10+ Years Exp.</span>
+                                    <i class="bi bi-graph-down-arrow fs-3 text-primary me-2"></i>
+                                    <div>
+                                        <div class="fw-bold">65% Drop</div>
+                                        <div class="small text-muted">in P99 Latency</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span class="fw-bold">Expert Support</span>
+                                    <i class="bi bi-server fs-3 text-primary me-2"></i>
+                                    <div>
+                                        <div class="fw-bold">Zero</div>
+                                        <div class="small text-muted">Downtime During Event</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="E-commerce Analytics" class="img-fluid rounded-4 shadow">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- My Core Values -->
+        <!-- Case Study 2 -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center flex-lg-row-reverse">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <span class="badge bg-secondary mb-3">SaaS Provider</span>
+                        <h2 class="fw-bold mb-3">Optimizing Multi-tenant Log Aggregation</h2>
+                        <p class="text-muted"><strong>Client Industry:</strong> Cyber Security SaaS</p>
+                        
+                        <h5 class="fw-bold mt-4">The Performance Issue</h5>
+                        <p class="text-muted">The client was ingesting over 5TB of logs daily. Their cluster was consistently running out of memory (OOM), leading to node crashes and data ingestion delays of up to 4 hours. Querying logs older than 7 days took over a minute.</p>
+                        
+                        <h5 class="fw-bold mt-4">My Tuning Approach</h5>
+                        <p class="text-muted">I completely redesigned their cluster architecture into a strict Hot-Warm-Cold tiering system. I implemented data streams to handle time-series data efficiently and heavily optimized their Logstash grok patterns which were consuming 80% of CPU during ingestion.</p>
+                        
+                        <h5 class="fw-bold mt-4">Measurable Outcomes</h5>
+                        <div class="row g-3 mt-2">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-cpu fs-3 text-primary me-2"></i>
+                                    <div>
+                                        <div class="fw-bold">40% Less</div>
+                                        <div class="small text-muted">CPU Usage</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-cash-stack fs-3 text-primary me-2"></i>
+                                    <div>
+                                        <div class="fw-bold">$12k / mo</div>
+                                        <div class="small text-muted">Infrastructure Savings</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Log Data Analytics" class="img-fluid rounded-4 shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Query Optimization Samples -->
         <section class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bold">My Core Values</h2>
-                    <p class="text-muted">The principles that guide every cluster I tune.</p>
+                    <h2 class="fw-bold">Query Optimization Samples</h2>
+                    <p class="text-muted">A quick look at how I rewrite inefficient DSL for immediate performance gains.</p>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-4 text-center">
-                        <div class="card p-4 border-0 h-100 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80" alt="Data Integrity" class="img-fluid rounded-4 mb-3 w-100" style="height: 180px; object-fit: cover;">
-                            <h5 class="fw-bold">Data Integrity</h5>
-                            <p class="small text-muted">I prioritize the safety of your data above all else, ensuring zero loss during migrations.</p>
+                
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <h5 class="fw-bold mb-3">The Problem: Wildcard Queries</h5>
+                        <p class="text-muted small">Using leading wildcards forces Elasticsearch to scan the entire index, bypassing the inverted index entirely and causing massive CPU spikes.</p>
+                        <div class="code-block">
+<pre class="mb-0">
+{
+  "query": {
+    "wildcard": {
+      "username": "*smith*"
+    }
+  }
+}
+</pre>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center">
-                        <div class="card p-4 border-0 h-100 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Maximum Uptime" class="img-fluid rounded-4 mb-3 w-100" style="height: 180px; object-fit: cover;">
-                            <h5 class="fw-bold">Maximum Uptime</h5>
-                            <p class="small text-muted">My strategies are designed for zero-downtime performance, keeping your business running 24/7.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <div class="card p-4 border-0 h-100 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80" alt="Scalable Design" class="img-fluid rounded-4 mb-3 w-100" style="height: 180px; object-fit: cover;">
-                            <h5 class="fw-bold">Scalable Design</h5>
-                            <p class="small text-muted">I build search architectures that grow with your data, from gigabytes to petabytes.</p>
+                    <div class="col-lg-6">
+                        <h5 class="fw-bold mb-3">The Solution: Custom Analyzers (N-grams)</h5>
+                        <p class="text-muted small">I implement Edge N-gram tokenizers at index time. This allows for lightning-fast partial matching using a standard term or match query.</p>
+                        <div class="code-block">
+<pre class="mb-0">
+{
+  "query": {
+    "match": {
+      <span class="code-added">"username.ngram": "smith"</span>
+    }
+  }
+}
+</pre>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Global Presence -->
-        <section class="bg-themed-section">
+        <!-- Consultation CTA -->
+        <section class="py-5 bg-primary text-white text-center">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h2 class="fw-bold mb-4">A Global Perspective on Search</h2>
-                        <p class="lead mb-4">I support clusters across 6 continents, providing around-the-clock expertise to global enterprises.</p>
-                        <p class="opacity-75">Whether you're a startup in Berlin or a retail giant in Tokyo, my remote-first architecture allows me to dive into your cluster and resolve issues in real-time, no matter the time zone.</p>
-                        <div class="mt-4">
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-globe2 me-2"></i> <span>20+ Countries Served</span>
-                            </div>
-                            <div class="d-flex align-items-center mb-2">
-                                <i class="bi bi-shield-check me-2"></i> <span>Enterprise-Grade Security</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-headset me-2"></i> <span>24/7 Global Support</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80" alt="Global Support" class="img-fluid rounded-4 shadow">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold mb-4">Ready to fix your cluster performance?</h2>
+                        <p class="lead mb-5">Let's discuss your specific challenges and outline a clear roadmap to a faster, more reliable Elasticsearch environment.</p>
+                        <a href="contact.html" class="btn btn-light btn-lg px-5 shadow-sm fw-bold">Book a Discovery Call</a>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
@@ -281,13 +350,9 @@
         <i class="bi bi-arrow-up"></i>
     </button>
 
-    <!-- Back to Top -->
-    <button id="backToTop" class="btn btn-primary rounded-circle p-3 shadow">
-        <i class="bi bi-arrow-up"></i>
-    </button>
-
+    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
