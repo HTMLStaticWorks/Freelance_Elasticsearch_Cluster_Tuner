@@ -12,7 +12,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=6">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <style>
@@ -45,6 +45,23 @@
         }
         [data-bs-theme="dark"] .bg-white {
             background-color: transparent !important;
+        }
+        /* RTL Password alignment fixes */
+        html[dir="rtl"] .pwd-eye-icon {
+            right: auto !important;
+            left: 1rem !important;
+            z-index: 10;
+        }
+        html[dir="rtl"] .position-relative input[type="password"],
+        html[dir="rtl"] .position-relative input[type="text"].form-control {
+            padding-right: 1.25rem !important;
+            padding-left: 2.5rem !important;
+            direction: ltr;
+            text-align: right;
+        }
+        .pwd-eye-icon {
+            right: 1rem;
+            z-index: 10;
         }
     </style>
 </head>
@@ -88,7 +105,7 @@
                         <label class="form-label fw-600">Password</label>
                         <div class="position-relative">
                             <input type="password" class="form-control py-3" id="password" placeholder="Create a strong password" required>
-                            <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" data-target="password"></i>
+                            <i class="bi bi-eye-slash position-absolute top-50 translate-middle-y cursor-pointer toggle-password pwd-eye-icon" data-target="password"></i>
                         </div>
                         <div class="form-text small">Must be at least 8 characters.</div>
                     </div>
@@ -96,7 +113,7 @@
                         <label class="form-label fw-600">Confirm Password</label>
                         <div class="position-relative">
                             <input type="password" class="form-control py-3" id="confirmPassword" placeholder="Repeat your password" required>
-                            <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" data-target="confirmPassword"></i>
+                            <i class="bi bi-eye-slash position-absolute top-50 translate-middle-y cursor-pointer toggle-password pwd-eye-icon" data-target="confirmPassword"></i>
                         </div>
                     </div>
                 </div>
@@ -114,10 +131,10 @@
 
             <div class="row g-3">
                 <div class="col-6">
-                    <a href="#" class="social-btn"><i class="bi bi-google me-2"></i>Google</a>
+                    <a href="#" class="social-btn" dir="ltr"><i class="bi bi-google me-2"></i>Google</a>
                 </div>
                 <div class="col-6">
-                    <a href="#" class="social-btn"><i class="bi bi-apple me-2"></i>Apple</a>
+                    <a href="#" class="social-btn" dir="ltr"><i class="bi bi-apple me-2"></i>Apple</a>
                 </div>
             </div>
 

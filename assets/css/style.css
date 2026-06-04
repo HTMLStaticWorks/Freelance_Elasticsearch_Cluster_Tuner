@@ -364,7 +364,6 @@ footer .input-group .form-control:focus {
     box-shadow: none;
 }
 
-<<<<<<< HEAD
 /* Fix footer language dropdown overlap with Back to Top button */
 @media (max-width: 991px) {
     footer .dropdown {
@@ -373,7 +372,9 @@ footer .input-group .form-control:focus {
     [dir="rtl"] footer .dropdown {
         margin-right: 0;
         margin-left: 70px;
-=======
+    }
+}
+
 /* Mobile Footer Alignment */
 @media (max-width: 767.98px) {
     footer {
@@ -382,7 +383,6 @@ footer .input-group .form-control:focus {
     footer .logo-text,
     footer .d-flex.gap-3 {
         justify-content: center;
->>>>>>> 34dbc0d67fb0a1a857a8a02b11a32f319dd276fa
     }
 }
 
@@ -393,6 +393,11 @@ footer .input-group .form-control:focus {
     right: 30px;
     z-index: 99;
     display: none;
+}
+
+[dir="rtl"] #backToTop {
+    right: 30px !important;
+    left: auto !important;
 }
 
 
@@ -684,11 +689,8 @@ footer .input-group .form-control:focus {
 
 /* RTL Navbar alignment */
 [dir="rtl"] .navbar .order-lg-last {
-<<<<<<< HEAD
     margin-left: 0 !important;
-=======
     /* Removed incorrect order: -1 to allow native flexbox RTL behavior (left side) */
->>>>>>> 34dbc0d67fb0a1a857a8a02b11a32f319dd276fa
 }
 
 [dir="rtl"] .navbar-brand {
