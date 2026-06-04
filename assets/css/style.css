@@ -659,8 +659,8 @@ footer .input-group .form-control:focus {
 /* Fix input padding for password toggle in RTL */
 [dir="rtl"] .position-relative input[type="password"],
 [dir="rtl"] .position-relative input[type="text"].form-control {
-    padding-right: 20px !important;
-    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    padding-left: 1.25rem !important;
 }
 
 [dir="rtl"] {
@@ -675,8 +675,8 @@ footer .input-group .form-control:focus {
 }
 
 [dir="rtl"] .pwd-eye-icon {
-    right: auto !important;
-    left: 1rem !important;
+    right: 1rem !important;
+    left: auto !important;
 }
 
 /* Ensure email and password text aligns correctly in RTL */
