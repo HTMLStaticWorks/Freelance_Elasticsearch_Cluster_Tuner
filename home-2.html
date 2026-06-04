@@ -21,7 +21,8 @@
             background: linear-gradient(rgba(0, 85, 113, 0.9), rgba(0, 85, 113, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            min-height: 80vh;
+            min-height: calc(100vh - 76px);
+            padding: 60px 0;
             display: flex;
             align-items: center;
             color: white;
@@ -32,15 +33,15 @@
 
     <!-- Header -->
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-xl">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <i class="bi bi-diagram-3-fill"></i>
                     <span>ES Tuner</span>
                 </a>
                 
-                <div class="d-flex align-items-center order-lg-last ms-2">
-                    <div class="d-none d-lg-flex align-items-center">
+                <div class="d-flex align-items-center order-xl-last ms-2">
+                    <div class="d-none d-xl-flex align-items-center">
                         <button class="btn btn-outline-primary rounded-circle rtl-toggle-btn d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;" title="Toggle RTL/LTR">
                             <span class="fw-bold" style="font-size: 13px;">RTL</span>
                         </button>
@@ -61,6 +62,7 @@
                         <li class="nav-item"><a class="nav-link active" href="home-2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -83,13 +85,14 @@
                 <li class="nav-item"><a class="nav-link active" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 
                 <!-- Auth & Toggles (Mobile Only) -->
-                <li class="nav-item d-lg-none mt-4">
+                <li class="nav-item d-xl-none mt-4">
                     <div class="d-flex flex-column gap-2 px-2 pt-4 border-top">
                         <div class="row g-2 mb-3">
                             <div class="col-6">
@@ -167,8 +170,16 @@
                         <h5 class="fw-bold">4. Monitor</h5>
                         <p class="small opacity-75 px-3">Verify improvements & alerting.</p>
                     </div>
+                    <!-- Desktop Horizontal Line -->
                     <div class="position-absolute top-50 start-0 w-100 border-top border-2 border-primary opacity-25 d-none d-md-block" style="transform: translateY(-40px); z-index: 0;"></div>
+<<<<<<< HEAD
                     <div class="position-absolute top-0 start-50 h-100 border-start border-2 border-primary opacity-25 d-md-none" style="transform: translateX(-50%); z-index: 0;"></div>
+=======
+                    <!-- Mobile Vertical Line -->
+                    <div class="position-absolute w-100 d-flex justify-content-center d-md-none" style="left: 0; top: 40px; height: calc(100% - 80px); z-index: 0; pointer-events: none;">
+                        <div class="border-start border-2 border-primary opacity-25 h-100"></div>
+                    </div>
+>>>>>>> 34dbc0d67fb0a1a857a8a02b11a32f319dd276fa
                 </div>
             </div>
         </section>

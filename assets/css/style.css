@@ -13,6 +13,8 @@
     --light-color: #ffffff;
     --transition: all 0.3s ease;
     --nav-toggler-filter: none;
+    --pwd-eye-right: 1rem;
+    --pwd-eye-left: auto;
 }
 
 .form-control, .form-select {
@@ -74,9 +76,9 @@ body {
 .nav-link {
     font-weight: 600;
     color: var(--dark-color) !important;
-    margin: 0 5px;
+    margin: 0 2px;
     transition: var(--transition);
-    padding: 10px 20px !important;
+    padding: 10px 12px !important;
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -257,7 +259,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    padding: 160px 0;
+    padding: 60px 0;
     background: linear-gradient(rgba(0, 85, 113, 0.85), rgba(0, 85, 113, 0.85)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
@@ -265,7 +267,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
-    min-height: 80vh;
+    min-height: calc(100vh - 76px);
 }
 
 .hero-section h1 {
@@ -299,7 +301,7 @@ body {
 footer {
     background-color: #1e293b !important;
     color: #ffffff !important;
-    padding: 100px 0 40px;
+    padding: 100px 0 100px;
     transition: var(--transition);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -362,6 +364,7 @@ footer .input-group .form-control:focus {
     box-shadow: none;
 }
 
+<<<<<<< HEAD
 /* Fix footer language dropdown overlap with Back to Top button */
 @media (max-width: 991px) {
     footer .dropdown {
@@ -370,6 +373,16 @@ footer .input-group .form-control:focus {
     [dir="rtl"] footer .dropdown {
         margin-right: 0;
         margin-left: 70px;
+=======
+/* Mobile Footer Alignment */
+@media (max-width: 767.98px) {
+    footer {
+        text-align: center;
+    }
+    footer .logo-text,
+    footer .d-flex.gap-3 {
+        justify-content: center;
+>>>>>>> 34dbc0d67fb0a1a857a8a02b11a32f319dd276fa
     }
 }
 
@@ -381,6 +394,8 @@ footer .input-group .form-control:focus {
     z-index: 99;
     display: none;
 }
+
+
 
 /* Animations */
 .fade-in {
@@ -622,9 +637,58 @@ footer .input-group .form-control:focus {
     right: auto !important;
 }
 
+/* Fix checkboxes in RTL */
+[dir="rtl"] .form-check-input {
+    float: right;
+    margin-left: 0;
+    margin-right: -1.5em;
+}
+
+[dir="rtl"] .form-check {
+    padding-left: 0;
+    padding-right: 1.5em;
+    text-align: right;
+}
+
+/* Fix input padding for password toggle in RTL */
+/* Fix input padding for password toggle in RTL */
+[dir="rtl"] .position-relative input[type="password"],
+[dir="rtl"] .position-relative input[type="text"].form-control {
+    padding-right: 20px !important;
+    padding-left: 2.5rem !important;
+}
+
+[dir="rtl"] {
+    --pwd-eye-right: auto;
+    --pwd-eye-left: 1rem;
+}
+
+.pwd-eye-icon {
+    right: 1rem !important;
+    left: auto !important;
+    z-index: 10;
+}
+
+[dir="rtl"] .pwd-eye-icon {
+    right: auto !important;
+    left: 1rem !important;
+}
+
+/* Ensure email and password text aligns correctly in RTL */
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="password"],
+[dir="rtl"] input[type="text"].form-control {
+    direction: ltr;
+    text-align: right;
+}
+
 /* RTL Navbar alignment */
 [dir="rtl"] .navbar .order-lg-last {
+<<<<<<< HEAD
     margin-left: 0 !important;
+=======
+    /* Removed incorrect order: -1 to allow native flexbox RTL behavior (left side) */
+>>>>>>> 34dbc0d67fb0a1a857a8a02b11a32f319dd276fa
 }
 
 [dir="rtl"] .navbar-brand {
@@ -670,6 +734,10 @@ footer .input-group .form-control:focus {
 
 .contact-hero {
     background-image: linear-gradient(rgba(0, 85, 113, 0.9), rgba(0, 85, 113, 0.9)), url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=1200&q=80');
+}
+
+.pricing-hero {
+    background-image: linear-gradient(rgba(0, 85, 113, 0.9), rgba(0, 85, 113, 0.9)), url('../images/pricing_hero_bg.png');
 }
 
 .service-hero {
