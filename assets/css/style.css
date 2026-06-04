@@ -617,6 +617,11 @@ footer .input-group .form-control:focus {
     margin-right: 0 !important;
 }
 
+[dir="rtl"] .end-0 {
+    left: 0 !important;
+    right: auto !important;
+}
+
 /* RTL Navbar alignment */
 [dir="rtl"] .navbar .order-lg-last {
     margin-left: 0 !important;
