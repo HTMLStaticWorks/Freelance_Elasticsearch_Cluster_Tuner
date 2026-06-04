@@ -362,6 +362,17 @@ footer .input-group .form-control:focus {
     box-shadow: none;
 }
 
+/* Fix footer language dropdown overlap with Back to Top button */
+@media (max-width: 991px) {
+    footer .dropdown {
+        margin-right: 70px;
+    }
+    [dir="rtl"] footer .dropdown {
+        margin-right: 0;
+        margin-left: 70px;
+    }
+}
+
 /* Back to Top */
 #backToTop {
     position: fixed;
@@ -608,9 +619,7 @@ footer .input-group .form-control:focus {
 
 /* RTL Navbar alignment */
 [dir="rtl"] .navbar .order-lg-last {
-    order: -1 !important;
     margin-left: 0 !important;
-    margin-right: auto !important;
 }
 
 [dir="rtl"] .navbar-brand {
