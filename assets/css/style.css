@@ -467,6 +467,11 @@ footer .input-group .form-control:focus {
     background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+/* Match mobile dashboard offcanvas and header background with desktop sidebar */
+#dashboardMobileMenu, .d-lg-none.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
 /* Dark mode for mobile dashboard offcanvas */
 [data-bs-theme="dark"] #dashboardMobileMenu {
     background-color: #0f172a !important;
