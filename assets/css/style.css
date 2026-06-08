@@ -36,6 +36,11 @@
     border-color: rgba(255,255,255,0.1);
 }
 
+[data-bs-theme="dark"] .form-select option {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
 [data-bs-theme="dark"] {
     --primary-color: #00bfb3;
     --secondary-color: #005571;
@@ -159,6 +164,23 @@ body {
     }
     .d-none.d-lg-flex .me-2, .d-none.d-lg-flex .me-3 {
         margin-right: 0.3rem !important;
+    }
+}
+    
+/* Fix dashboard stat cards for tablet & iPad to prevent text wrapping */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .dashboard-content .col-md-3 .card {
+        padding: 1rem 0.5rem !important;
+    }
+    .dashboard-content .col-md-3 .card .small {
+        white-space: nowrap;
+        font-size: 0.7rem;
+        letter-spacing: -0.4px;
+    }
+    .dashboard-content .col-md-3 .card h3,
+    .dashboard-content .col-md-3 .card .fs-2,
+    .dashboard-content .col-md-3 .card .fs-1 {
+        font-size: 1.25rem !important;
     }
 }
 
